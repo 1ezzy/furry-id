@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower');
 
 @import 'tailwindcss';
 @import '@layerstack/tailwind/core.css';
@@ -217,8 +218,14 @@
 	--color-danger-900: hsl(11.4 25.9786% 39.8568%);
 }
 
+h1 {
+	font-family: 'Gamja Flower';
+	font-weight: 400;
+	font-style: normal;
+}
+
 :root {
-	font-family: Rubik;
+	font-family: 'Rubik';
 
 	@media (min-width: 2560px) {
 		.text-sm {
