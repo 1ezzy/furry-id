@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { Button } from 'svelte-ux';
-	import FormSection1 from '$lib/components/FormSection1.svelte';
-	import FormSection2 from '$lib/components/FormSection2.svelte';
+	import FormSection1 from '$lib/components/sections/FormSection1.svelte';
+	import FormSection2 from '$lib/components/sections/FormSection2.svelte';
 	import LicenseStepper from '$lib/components/LicenseStepper.svelte';
 
 	let stepValue: number = 1;
 </script>
 
-<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
 	<LicenseStepper
 		viewchange={(value: number) => {
 			stepValue = value;
