@@ -9,8 +9,8 @@
 		{
 			sectionHeader: 'Sections 1, 2 (Name)',
 			fields: [
-				{ label: 'First Name', basis: '1/2' },
-				{ label: 'Second Name', basis: '1/2' }
+				{ label: 'Second Name', basis: '1/2' },
+				{ label: 'First Name', basis: '1/2' }
 			]
 		},
 		{
@@ -24,7 +24,7 @@
 		{
 			sectionHeader: 'Sections 4a, 4b, 4d (Misc.)',
 			fields: [
-				{ label: 'Personal ID Number', basis: '1/2' },
+				{ label: 'Issue Date', basis: '1/2' },
 				{ label: 'Expiration Date', basis: '1/2' },
 				{ label: 'License Number', basis: '1/2' }
 			]
