@@ -4,7 +4,7 @@
 	let { viewchange } = $props();
 </script>
 
-<div class="flex items-center gap-4">
+<div class="flex items-center gap-4 pr-4">
 	<Button
 		color="primary"
 		variant="fill"

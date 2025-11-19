@@ -7,15 +7,17 @@
 	let stepValue: number = 1;
 </script>
 
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-4 overflow-y-auto">
 	<LicenseStepper
 		viewchange={(value: number) => {
 			stepValue = value;
 		}}
 	/>
-	{#if stepValue === 1}
-		<FormSection1></FormSection1>
-	{:else if stepValue === 2}
-		<FormSection2></FormSection2>
-	{/if}
+	<div class="pr-0 md:overflow-y-auto md:pr-4">
+		{#if stepValue === 1}
+			<FormSection1></FormSection1>
+		{:else if stepValue === 2}
+			<FormSection2></FormSection2>
+		{/if}
+	</div>
 </div>
