@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower');
 
 @import 'tailwindcss';
@@ -116,8 +115,8 @@
 }
 [data-theme='dark'] {
 	color-scheme: dark;
-	--color-primary: hsl(108.1319 66.4234% 73.1373%);
-	--color-secondary: hsl(12.1472 100% 68.0392%);
+	--color-primary: hsl(351 100% 85.5%);
+	--color-secondary: hsl(108.1319 66.4234% 73.1373%);
 	--color-accent: hsl(276.5517 66.4122% 74.3137%);
 	--color-neutral: hsl(220 21.1268% 13.9216%);
 	--color-neutral-content: hsl(196.6667 30.5085% 76.8627%);
@@ -129,28 +128,28 @@
 	--color-success: hsl(158.7234 81.5029% 66.0784%);
 	--color-warning: hsl(47.7632 82.6087% 63.9216%);
 	--color-danger: hsl(11.4 100% 80.3922%);
-	--color-primary-content: hsl(109.2864 45.7907% 5.0786%);
-	--color-primary-50: hsl(108.2365 67.728% 85.6578%);
-	--color-primary-100: hsl(108.2362 67.5517% 84.3133%);
-	--color-primary-200: hsl(108.2302 67.2186% 81.5959%);
-	--color-primary-300: hsl(108.2144 66.9153% 78.8345%);
-	--color-primary-400: hsl(108.1839 66.6476% 76.0194%);
-	--color-primary-500: hsl(108.1319 66.4234% 73.1373%);
-	--color-primary-600: hsl(108.1319 42.7753% 63.4337%);
-	--color-primary-700: hsl(108.1319 29.3455% 53.9964%);
-	--color-primary-800: hsl(108.1319 25.473% 44.8502%);
-	--color-primary-900: hsl(108.1319 26.1546% 36.0257%);
-	--color-secondary-content: hsl(8.1035 77.2309% 4.8583%);
-	--color-secondary-50: hsl(13.2996 100% 82.6119%);
-	--color-secondary-100: hsl(13.1729 100% 81.0356%);
-	--color-secondary-200: hsl(12.9127 100% 77.87%);
-	--color-secondary-300: hsl(12.6472 100% 74.6715%);
-	--color-secondary-400: hsl(12.3852 100% 71.4114%);
-	--color-secondary-500: hsl(12.1472 100% 68.0392%);
-	--color-secondary-600: hsl(12.1472 68.2752% 58.9647%);
-	--color-secondary-700: hsl(12.1472 48.4977% 50.1393%);
-	--color-secondary-800: hsl(12.1472 49.2088% 41.586%);
-	--color-secondary-900: hsl(12.1472 50.6319% 33.3336%);
+	--color-primary-content: hsl(351 100% 10%);
+	--color-primary-50: hsl(351 100% 95%);
+	--color-primary-100: hsl(351 100% 92%);
+	--color-primary-200: hsl(351 100% 89%);
+	--color-primary-300: hsl(351 100% 87%);
+	--color-primary-400: hsl(351 100% 86%);
+	--color-primary-500: hsl(351 100% 85.5%);
+	--color-primary-600: hsl(351 80% 70%);
+	--color-primary-700: hsl(351 70% 55%);
+	--color-primary-800: hsl(351 65% 45%);
+	--color-primary-900: hsl(351 60% 35%);
+	--color-secondary-content: hsl(109.2864 45.7907% 5.0786%);
+	--color-secondary-50: hsl(108.2365 67.728% 85.6578%);
+	--color-secondary-100: hsl(108.2362 67.5517% 84.3133%);
+	--color-secondary-200: hsl(108.2302 67.2186% 81.5959%);
+	--color-secondary-300: hsl(108.2144 66.9153% 78.8345%);
+	--color-secondary-400: hsl(108.1839 66.6476% 76.0194%);
+	--color-secondary-500: hsl(108.1319 66.4234% 73.1373%);
+	--color-secondary-600: hsl(108.1319 42.7753% 63.4337%);
+	--color-secondary-700: hsl(108.1319 29.3455% 53.9964%);
+	--color-secondary-800: hsl(108.1319 25.473% 44.8502%);
+	--color-secondary-900: hsl(108.1319 26.1546% 36.0257%);
 	--color-accent-content: hsl(276.1458 43.0163% 5.2138%);
 	--color-accent-50: hsl(275.4992 69.5985% 86.1986%);
 	--color-accent-100: hsl(275.6036 69.2177% 84.9093%);
@@ -219,13 +218,12 @@
 }
 
 h1 {
-	font-family: 'Gamja Flower';
-	font-weight: 400;
+	font-weight: 600;
 	font-style: normal;
 }
 
 :root {
-	font-family: 'Rubik';
+	font-family: 'Gamja Flower';
 
 	@media (min-width: 2560px) {
 		.text-sm {
