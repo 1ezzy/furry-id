@@ -14,11 +14,12 @@
 	</h1>
 	<div class="flex h-fit w-full items-center">
 		<div class="flex h-full w-full items-start gap-24">
-			<div class="basis-3/5">
+			<div class="flex basis-3/5 flex-col gap-2">
+				<h2 class="text-accent text-2xl font-bold">[Preview]</h2>
 				<div class="relative aspect-214/135 rounded-2xl bg-white">
-					<div
+					<!-- <div
 						class="h-full rounded-2xl bg-[url('/license.jpeg')] bg-cover bg-center opacity-30"
-					></div>
+					></div> -->
 					<LicenseOverlay></LicenseOverlay>
 				</div>
 			</div>

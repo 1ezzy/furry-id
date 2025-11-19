@@ -10,5 +10,5 @@
 
 <!-- Paw Print in place of State -->
 <div class="absolute top-[4%] left-[85%]">
-	<Icon color="black" class="h-16 w-16" data={LucidePawPrint} />
+	<Icon color="black" class="h-16 w-16 stroke-1" data={LucidePawPrint} />
 </div>

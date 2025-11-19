@@ -7,7 +7,7 @@
 	let stepValue: number = 1;
 </script>
 
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-8">
 	<LicenseStepper
 		viewchange={(value: number) => {
 			stepValue = value;
