@@ -1,6 +1,6 @@
 <script lang="ts">
-	import AllFormSections from '$lib/components/AllFormSections.svelte';
-	import LicenseOverlay from '$lib/components/overlay/LicenseOverlay.svelte';
+	import AllFormSections from '$lib/components/form-sections/AllFormSections.svelte';
+	import LicenseOverlay from '$lib/components/license/LicenseOverlay.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
 
 	const title = 'Furry License Generator';
@@ -12,7 +12,7 @@
 	>
 		{title}
 	</h1>
-	<div class="flex h-fit w-full flex-1 flex-col items-start gap-24 md:h-0 md:flex-row">
+	<div class="flex h-fit w-full flex-1 flex-col items-start gap-24 md:h-0 md:flex-row 2xl:gap-40">
 		<div class="flex w-full basis-3/5 flex-col gap-2">
 			<h2 class="text-secondary text-2xl font-bold">[Preview]</h2>
 			<LicenseOverlay></LicenseOverlay>

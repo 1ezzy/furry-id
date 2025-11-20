@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { InputField } from '$lib/constants/input-field.interface';
-	import InputSection from './InputSection.svelte';
-	import DateInputSection from './DateInputSection.svelte';
-	import CountryInputSection from './CountryInputSection.svelte';
+	import InputSection from '$lib/components/input-sections/InputSection.svelte';
+	import DateInputSection from '$lib/components/input-sections/DateInputSection.svelte';
+	import CountryInputSection from '$lib/components/input-sections/CountryInputSection.svelte';
 
 	export const sections: {
 		sectionHeader: string;

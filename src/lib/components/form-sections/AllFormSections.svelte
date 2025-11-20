@@ -1,6 +1,6 @@
 <script lang="ts">
-	import FormSection1 from '$lib/components/sections/FormSection1.svelte';
-	import FormSection2 from '$lib/components/sections/FormSection2.svelte';
+	import FormSection1 from '$lib/components/form-sections/FormSection1.svelte';
+	import FormSection2 from '$lib/components/form-sections/FormSection2.svelte';
 	import FormStepper from '$lib/components/FormStepper.svelte';
 
 	let stepValue: number | undefined = $state();
