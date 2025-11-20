@@ -11,9 +11,9 @@
 <div class="absolute top-[20%] left-[40%] flex h-[1.5cqw] items-center">
 	<span
 		class="font-[Arial] text-[3.2cqw] font-bold text-black md:text-[1.7cqw]"
-		class:opacity-60={licenseStore.licenseNumber.length === 0}
+		class:opacity-60={licenseStore.licenseNumber?.length === 0}
 	>
-		{licenseStore.licenseNumber.length > 0 ? licenseStore.licenseNumber.toUpperCase() : 'AB123456'}
+		{licenseStore.licenseNumber?.length > 0 ? licenseStore.licenseNumber.toUpperCase() : 'AB123456'}
 	</span>
 </div>
 
@@ -21,17 +21,17 @@
 <div class="absolute top-[27%] left-[37.5%] flex h-[1.5cqw] items-center">
 	<span
 		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
-		class:opacity-60={licenseStore.secondName.length === 0}
+		class:opacity-60={licenseStore.secondName?.length === 0}
 	>
-		{licenseStore.secondName.length > 0 ? licenseStore.secondName.toUpperCase() : 'SECOND NAME'}
+		{licenseStore.secondName?.length > 0 ? licenseStore.secondName.toUpperCase() : 'SECOND NAME'}
 	</span>
 </div>
 <div class="absolute top-[32.5%] left-[37.5%] flex h-[1.5cqw] items-center">
 	<span
 		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
-		class:opacity-60={licenseStore.firstName.length === 0}
+		class:opacity-60={licenseStore.firstName?.length === 0}
 	>
-		{licenseStore.firstName.length > 0 ? licenseStore.firstName.toUpperCase() : 'FIRST NAME'}
+		{licenseStore.firstName?.length > 0 ? licenseStore.firstName.toUpperCase() : 'FIRST NAME'}
 	</span>
 </div>
 
@@ -39,17 +39,17 @@
 <div class="absolute top-[38%] left-[37.5%] flex h-[1.5cqw] items-center">
 	<span
 		class="font-[Arial] text-[2.5cqw] text-black font-stretch-condensed md:text-[1.2cqw]"
-		class:opacity-60={licenseStore.species.length === 0}
+		class:opacity-60={licenseStore.species?.length === 0}
 	>
-		{licenseStore.species.length > 0 ? licenseStore.species.toUpperCase() : 'SPECIES'}
+		{licenseStore.species?.length > 0 ? licenseStore.species.toUpperCase() : 'SPECIES'}
 	</span>
 </div>
 <div class="absolute top-[43.5%] left-[37.5%] flex h-[1.5cqw] items-center">
 	<span
 		class="font-[Arial] text-[2.5cqw] text-black font-stretch-condensed md:text-[1.2cqw]"
-		class:opacity-60={licenseStore.country.length === 0}
+		class:opacity-60={licenseStore.country?.label?.length === 0}
 	>
-		{licenseStore.country.length > 0 ? licenseStore.country.toUpperCase() : 'COUNTRY'}
+		{licenseStore.country?.label?.length > 0 ? licenseStore.country.label.toUpperCase() : 'COUNTRY'}
 	</span>
 </div>
 
@@ -67,25 +67,25 @@
 <div class="absolute top-[73%] left-[35%] flex h-[1.5cqw] items-center">
 	<span
 		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
-		class:opacity-60={licenseStore.gender.length === 0}
+		class:opacity-60={licenseStore.gender?.length === 0}
 	>
-		{licenseStore.gender.length > 0 ? licenseStore.gender.toUpperCase() : 'NB'}
+		{licenseStore.gender?.length > 0 ? licenseStore.gender.toUpperCase() : 'NB'}
 	</span>
 </div>
 <div class="absolute top-[73%] left-[41.5%] flex h-[1.5cqw] items-center">
 	<span
 		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
-		class:opacity-60={licenseStore.height.length === 0}
+		class:opacity-60={licenseStore.height?.length === 0}
 	>
-		{licenseStore.height.length > 0 ? licenseStore.height.toUpperCase() : '6-00'}
+		{licenseStore.height?.length > 0 ? licenseStore.height.toUpperCase() : '6-00'}
 	</span>
 </div>
 <div class="absolute top-[73%] left-[49.5%] flex h-[1.5cqw] items-center">
 	<span
 		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
-		class:opacity-60={licenseStore.eyes.length === 0}
+		class:opacity-60={licenseStore.eyes?.length === 0}
 	>
-		{licenseStore.eyes.length > 0 ? licenseStore.eyes.toUpperCase() : 'GRN'}
+		{licenseStore.eyes?.length > 0 ? licenseStore.eyes.toUpperCase() : 'GRN'}
 	</span>
 </div>
 

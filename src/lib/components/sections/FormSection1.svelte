@@ -2,6 +2,7 @@
 	import type { InputField } from '$lib/constants/input-field.interface';
 	import InputSection from './InputSection.svelte';
 	import DateInputSection from './DateInputSection.svelte';
+	import CountryInputSection from './CountryInputSection.svelte';
 
 	export const sections: {
 		sectionHeader: string;
@@ -33,6 +34,8 @@
 	{#each sections as section}
 		{#if section.sectionHeader === 'Section 4'}
 			<DateInputSection {section}></DateInputSection>
+		{:else if section.sectionHeader === 'Section 6'}
+			<CountryInputSection {section}></CountryInputSection>
 		{:else}
 			<InputSection {section}></InputSection>
 		{/if}

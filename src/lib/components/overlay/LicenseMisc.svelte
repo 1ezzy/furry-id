@@ -12,6 +12,12 @@
 	</span>
 </div>
 
+<!-- Country Flag in Place of State Name -->
+<div class="absolute top-[6%] left-[4%] flex aspect-300/225 items-center justify-center">
+	<span class="fi fi-{licenseStore.country.value} text-[] h-full flex-1 rounded-md md:text-[4cqw]">
+	</span>
+</div>
+
 <!-- Paw Print in place of State -->
 <div class="absolute top-[4%] left-[86%]">
 	<Icon color="black" class="h-[5.5cqw] w-[5.5cqw] fill-black stroke-1" data={LucidePawPrint} />

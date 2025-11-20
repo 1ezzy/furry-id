@@ -4,7 +4,11 @@ export class LicenseStore {
 	secondName = $state('');
 	birthday = $state<Date | null>(null);
 	species = $state('');
-	country = $state('');
+	country = $state({
+		label: '',
+		value: '',
+		icon: ''
+	});
 	gender = $state('');
 	height = $state('');
 	eyes = $state('');
