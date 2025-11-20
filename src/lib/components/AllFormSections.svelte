@@ -7,19 +7,12 @@
 	let stepValue: number = 1;
 </script>
 
-<div class="flex flex-col gap-4 overflow-y-auto">
+<div class="flex flex-col justify-between gap-4 overflow-y-auto">
 	<LicenseStepper
 		viewchange={(value: number) => {
 			stepValue = value;
 		}}
 	/>
-	<div class="flex flex-col gap-4 pr-0 md:overflow-y-auto md:pr-4">
-		{#if stepValue === 1}
-			<FormSection1></FormSection1>
-		{:else if stepValue === 2}
-			<FormSection2></FormSection2>
-		{/if}
-	</div>
 	<div class="flex w-full flex-row justify-between pt-2 pr-0 md:pr-4">
 		<Button disabled={stepValue === 1} size="md" variant="outline" onclick={() => stepValue--}>
 			Prev Page
@@ -33,5 +26,12 @@
 		>
 			Next Page
 		</Button>
+	</div>
+	<div class="flex flex-col justify-between gap-4 pr-0 md:overflow-y-auto md:pr-4">
+		{#if stepValue === 1}
+			<FormSection1></FormSection1>
+		{:else if stepValue === 2}
+			<FormSection2></FormSection2>
+		{/if}
 	</div>
 </div>

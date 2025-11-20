@@ -12,7 +12,7 @@
 	>
 		{title}
 	</h1>
-	<div class="flex h-fit w-full flex-1 items-start gap-24 md:h-0 md:flex-row">
+	<div class="flex h-fit w-full flex-1 flex-col items-start gap-24 md:h-0 md:flex-row">
 		<div class="flex w-full basis-3/5 flex-col gap-2">
 			<h2 class="text-secondary text-2xl font-bold">[Preview]</h2>
 			<div
