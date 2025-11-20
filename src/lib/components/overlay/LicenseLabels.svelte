@@ -1,20 +1,43 @@
+<script lang="ts">
+	import { licenseStore } from '$lib/store/license-store.svelte';
+	import { formatDateForLicense } from '$lib/utils/format-date-for-license';
+</script>
+
 <!-- License Number -->
 <div class="absolute top-[20%] left-[40%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[3.2cqw] font-bold text-black md:text-[1.7cqw]">NG133767</span>
+	<span
+		class="font-[Arial] text-[3.2cqw] font-bold text-black md:text-[1.7cqw]"
+		class:opacity-60={licenseStore.licenseNumber.length === 0}
+	>
+		{licenseStore.licenseNumber.length > 0 ? licenseStore.licenseNumber.toUpperCase() : 'AB123456'}
+	</span>
 </div>
 
 <!-- Names -->
 <div class="absolute top-[27%] left-[37.5%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">MOON</span>
+	<span
+		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
+		class:opacity-60={licenseStore.secondName.length === 0}
+	>
+		{licenseStore.secondName.length > 0 ? licenseStore.secondName.toUpperCase() : 'SECOND NAME'}
+	</span>
 </div>
 <div class="absolute top-[32.5%] left-[37.5%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">EZRA</span>
+	<span
+		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
+		class:opacity-60={licenseStore.firstName.length === 0}
+	>
+		{licenseStore.firstName.length > 0 ? licenseStore.firstName.toUpperCase() : 'FIRST NAME'}
+	</span>
 </div>
 
 <!-- Species and Country -->
 <div class="absolute top-[38%] left-[37.5%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[2.5cqw] text-black font-stretch-condensed md:text-[1.2cqw]">
-		JACKAL/LYNX
+	<span
+		class="font-[Arial] text-[2.5cqw] text-black font-stretch-condensed md:text-[1.2cqw]"
+		class:opacity-60={licenseStore.species.length === 0}
+	>
+		{licenseStore.species.length > 0 ? licenseStore.species.toUpperCase() : 'SPECIES'}
 	</span>
 </div>
 <div class="absolute top-[43.5%] left-[37.5%] flex h-[1.5cqw] items-center">
@@ -49,5 +72,10 @@
 
 <!-- Date of Birth -->
 <div class="absolute top-[91%] left-[12%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[3cqw] text-black md:text-[1.3cqw]">03-04-2000</span>
+	<span
+		class="font-[Arial] text-[3cqw] text-black md:text-[1.3cqw]"
+		class:opacity-60={licenseStore.birthday === null}
+	>
+		{licenseStore.birthday !== null ? formatDateForLicense(licenseStore.birthday) : '01/01/2000'}
+	</span>
 </div>

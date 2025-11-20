@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Button } from 'svelte-ux';
 	import FormSection1 from '$lib/components/sections/FormSection1.svelte';
 	import FormSection2 from '$lib/components/sections/FormSection2.svelte';
 	import LicenseStepper from '$lib/components/LicenseStepper.svelte';

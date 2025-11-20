@@ -9,22 +9,22 @@
 	}[] = [
 		{
 			sectionHeader: 'Sections 1',
-			fields: [{ label: 'License #', basis: '1/1' }]
+			fields: [{ key: 'licenseNumber', label: 'License #', basis: '1/1', maxlength: 8 }]
 		},
 		{
 			sectionHeader: 'Sections 2,3',
 			fields: [
-				{ label: 'First Name', basis: '1/2' },
-				{ label: 'Second Name', basis: '1/2' }
+				{ key: 'firstName', label: 'First Name', basis: '1/2', maxlength: 24 },
+				{ key: 'secondName', label: 'Second Name', basis: '1/2', maxlength: 24 }
 			]
 		},
 		{
 			sectionHeader: 'Section 4',
-			fields: [{ label: 'Birthday', basis: '1/1' }]
+			fields: [{ key: 'birthday', label: 'Birthday', basis: '1/1' }]
 		},
 		{
 			sectionHeader: 'Section 5',
-			fields: [{ label: 'Species', basis: '1/1' }]
+			fields: [{ key: 'species', label: 'Species', basis: '1/1', maxlength: 16 }]
 		}
 	];
 </script>

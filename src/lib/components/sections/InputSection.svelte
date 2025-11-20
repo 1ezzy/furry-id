@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Field, Input } from 'svelte-ux';
 	import { basisClasses } from '$lib/constants/basis-classes';
+	import { licenseStore } from '$lib/store/license-store.svelte';
 	import type { InputField } from '$lib/constants/input-field.interface';
 
 	let { section }: { section: { sectionHeader: string; fields: InputField[] } } = $props();
@@ -11,7 +12,7 @@
 	<div class="flex gap-2">
 		{#each section.fields as field}
 			<Field class={basisClasses[field.basis]} label={field.label} let:id>
-				<Input {id} />
+				<Input {id} bind:value={licenseStore[field.key] as string} maxlength={field.maxlength} />
 			</Field>
 		{/each}
 	</div>

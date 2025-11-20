@@ -1,6 +1,9 @@
-import type { BasisKey } from './basis-classes';
+import type { LicenseStore } from '$lib/store/license-store.svelte';
+import type { BasisKey } from '$lib/constants/basis-classes';
 
 export interface InputField {
+	key: keyof LicenseStore;
 	label: string;
 	basis: BasisKey;
+	maxlength?: number;
 }

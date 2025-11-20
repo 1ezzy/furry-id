@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { DateField } from 'svelte-ux';
 	import { basisClasses } from '$lib/constants/basis-classes';
+	import { licenseStore } from '$lib/store/license-store.svelte';
 	import type { InputField } from '$lib/constants/input-field.interface';
 
 	let { section }: { section: { sectionHeader: string; fields: InputField[] } } = $props();
@@ -11,9 +12,9 @@
 	<div class="flex gap-2">
 		{#each section.fields as field}
 			<DateField
+				bind:value={licenseStore[field.key] as Date}
 				class={basisClasses[field.basis]}
 				label={field.label}
-				on:change={(e) => {}}
 				picker
 				clearable
 			/>
