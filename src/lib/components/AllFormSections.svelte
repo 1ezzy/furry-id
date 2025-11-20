@@ -1,7 +1,7 @@
 <script lang="ts">
 	import FormSection1 from '$lib/components/sections/FormSection1.svelte';
 	import FormSection2 from '$lib/components/sections/FormSection2.svelte';
-	import LicenseStepper from '$lib/components/LicenseStepper.svelte';
+	import LicenseStepper from '$lib/components/FormStepper.svelte';
 
 	let stepValue: number = 1;
 </script>
