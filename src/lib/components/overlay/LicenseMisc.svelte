@@ -13,8 +13,8 @@
 </div>
 
 <!-- Paw Print in place of State -->
-<div class="absolute top-[6%] left-[86%]">
-	<Icon color="black" class="h-[5.5cqw] w-[5.5cqw] stroke-1" data={LucidePawPrint} />
+<div class="absolute top-[4%] left-[86%]">
+	<Icon color="black" class="h-[5.5cqw] w-[5.5cqw] fill-black stroke-1" data={LucidePawPrint} />
 </div>
 
 <!-- Main Photo -->
