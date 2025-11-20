@@ -1,30 +1,68 @@
 <script lang="ts">
 	import { Button } from 'svelte-ux';
-	import { LucideHatGlasses, LucidePencilRuler } from '@lucide/svelte';
+	import {
+		LucideHatGlasses,
+		LucidePencilRuler,
+		LucideImage,
+		LucideSignature,
+		LucidePalette,
+		LucideCircleCheckBig
+	} from '@lucide/svelte';
 
-	let { viewchange } = $props();
+	let { stepchange } = $props();
+	let stepValue: number = $state(1);
+
+	$effect(() => {
+		stepchange(stepValue);
+	});
+
+	const buttons = [
+		{ icon: LucideHatGlasses },
+		{ icon: LucidePencilRuler },
+		{ icon: LucideImage },
+		{ icon: LucideSignature },
+		{ icon: LucidePalette },
+		{ icon: LucideCircleCheckBig }
+	];
 </script>
 
-<div class="flex items-center gap-4 pr-4">
+{#snippet stepperButton(index: number, icon: any)}
 	<Button
 		class="stepper-icon flex aspect-square h-10 w-10"
-		color="primary"
+		color={stepValue === index ? 'secondary' : 'primary'}
 		variant="fill"
-		icon={LucideHatGlasses}
-		aria-label="Section 1"
+		{icon}
+		aria-label="Section {index}"
 		onclick={() => {
-			viewchange(1);
+			stepValue = index;
 		}}
 	></Button>
-	<div class="bg-primary h-px flex-1"></div>
+{/snippet}
+
+{#snippet changeSectionButtons()}
+	<Button disabled={stepValue === 1} size="md" variant="outline" onclick={() => stepValue--}>
+		Prev Page
+	</Button>
 	<Button
-		class="stepper-icon flex aspect-square h-10 w-10"
+		disabled={stepValue === buttons.length}
+		size="md"
+		variant="outline"
 		color="primary"
-		variant="fill"
-		icon={LucidePencilRuler}
-		aria-label="Section 2"
-		onclick={() => {
-			viewchange(2);
-		}}
-	></Button>
+		onclick={() => stepValue++}
+	>
+		Next Page
+	</Button>
+{/snippet}
+
+<div class="flex flex-col gap-4">
+	<div
+		class="flex items-center justify-between gap-4 overflow-x-auto pr-4 md:grid md:grid-cols-3 md:grid-rows-2 lg:flex lg:justify-between md:[&>*:nth-child(3n+1)]:justify-self-start md:[&>*:nth-child(3n+2)]:justify-self-center md:[&>*:nth-child(3n+3)]:justify-self-end"
+	>
+		{#each buttons as button, i}
+			{@render stepperButton(i + 1, button.icon)}
+		{/each}
+	</div>
+	<div class="flex w-full flex-row justify-between pt-2 pr-0 md:pr-4">
+		{@render changeSectionButtons()}
+	</div>
 </div>

@@ -7,13 +7,13 @@
 
 <!-- Title -->
 <div class="absolute top-[8%] left-[25.5%] flex h-[2cqw]">
-	<span class="font-['Arial_Narrow'] text-[3.2cqw] text-black italic md:text-[1.7cqw]">
+	<span class="font-['Arial_Narrow'] text-[3.2cqw] font-bold text-black italic md:text-[1.7cqw]">
 		FURRY LICENSE
 	</span>
 </div>
 
 <!-- Country Flag in Place of State Name -->
-<div class="absolute top-[6%] left-[4%] flex aspect-300/225 items-center justify-center">
+<div class="absolute top-[5%] left-[4%] flex aspect-300/225 items-center justify-center">
 	<span class="fi fi-{licenseStore.country.value} text-[] h-full flex-1 rounded-md md:text-[4cqw]">
 	</span>
 </div>
