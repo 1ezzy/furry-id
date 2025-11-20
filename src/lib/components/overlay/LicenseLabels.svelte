@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { licenseStore } from '$lib/store/license-store.svelte';
 	import { formatDateForLicense } from '$lib/utils/format-date-for-license';
+
+	const currentDate = new Date();
+	const expirationDate = new Date();
+	expirationDate.setFullYear(expirationDate.getFullYear() + 5);
 </script>
 
 <!-- License Number -->
@@ -41,8 +45,11 @@
 	</span>
 </div>
 <div class="absolute top-[43.5%] left-[37.5%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[2.5cqw] text-black font-stretch-condensed md:text-[1.2cqw]">
-		UNITED STATES OF AMERICA
+	<span
+		class="font-[Arial] text-[2.5cqw] text-black font-stretch-condensed md:text-[1.2cqw]"
+		class:opacity-60={licenseStore.country.length === 0}
+	>
+		{licenseStore.country.length > 0 ? licenseStore.country.toUpperCase() : 'COUNTRY'}
 	</span>
 </div>
 
@@ -51,23 +58,42 @@
 	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">D</span>
 </div>
 <div class="absolute top-[52%] left-[42%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">01-21-2021</span>
+	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">
+		{formatDateForLicense(expirationDate)}
+	</span>
 </div>
 
 <!-- Sex, Height, and Eyes -->
 <div class="absolute top-[73%] left-[35%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">M</span>
+	<span
+		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
+		class:opacity-60={licenseStore.gender.length === 0}
+	>
+		{licenseStore.gender.length > 0 ? licenseStore.gender.toUpperCase() : 'NB'}
+	</span>
 </div>
 <div class="absolute top-[73%] left-[41.5%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">6-00</span>
+	<span
+		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
+		class:opacity-60={licenseStore.height.length === 0}
+	>
+		{licenseStore.height.length > 0 ? licenseStore.height.toUpperCase() : '6-00'}
+	</span>
 </div>
 <div class="absolute top-[73%] left-[49.5%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">GRN</span>
+	<span
+		class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]"
+		class:opacity-60={licenseStore.eyes.length === 0}
+	>
+		{licenseStore.eyes.length > 0 ? licenseStore.eyes.toUpperCase() : 'GRN'}
+	</span>
 </div>
 
 <!-- Issue Date -->
 <div class="absolute top-[79.5%] left-[42%] flex h-[1.5cqw] items-center">
-	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">11-18-2025</span>
+	<span class="font-[Arial] text-[2.5cqw] text-black md:text-[1.2cqw]">
+		{formatDateForLicense(currentDate)}
+	</span>
 </div>
 
 <!-- Date of Birth -->

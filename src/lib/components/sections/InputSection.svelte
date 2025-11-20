@@ -12,7 +12,14 @@
 	<div class="flex gap-2">
 		{#each section.fields as field}
 			<Field class={basisClasses[field.basis]} label={field.label} let:id>
-				<Input {id} bind:value={licenseStore[field.key] as string} maxlength={field.maxlength} />
+				<Input
+					{id}
+					bind:value={licenseStore[field.key] as string}
+					maxlength={field.maxlength}
+					mask={field.mask}
+					replace={field.replace}
+					placeholder={field.placeholder}
+				/>
 			</Field>
 		{/each}
 	</div>

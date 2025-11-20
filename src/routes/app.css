@@ -243,3 +243,9 @@ h1 {
 		line-height: 1.75;
 	}
 }
+
+button.stepper-icon span {
+	display: flex;
+	height: 20px;
+	width: 20px;
+}

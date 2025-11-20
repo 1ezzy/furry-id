@@ -8,27 +8,39 @@
 		fields: InputField[];
 	}[] = [
 		{
-			sectionHeader: 'Sections 1',
-			fields: [{ label: 'License #', basis: '1/1' }]
+			sectionHeader: 'Section 1',
+			fields: [{ key: 'licenseNumber', label: 'License #', basis: '1/1', maxlength: 8 }]
 		},
 		{
-			sectionHeader: 'Sections 2,3',
+			sectionHeader: 'Section 9',
+			fields: [{ key: 'gender', label: 'Gender', basis: '1/1', maxlength: 3 }]
+		},
+		{
+			sectionHeader: 'Section 10',
 			fields: [
-				{ label: 'First Name', basis: '1/2' },
-				{ label: 'Second Name', basis: '1/2' }
+				{
+					key: 'height',
+					label: 'Height',
+					basis: '1/1',
+					mask: ' -  ',
+					replace: ' ',
+					placeholder: '6-00'
+				}
 			]
 		},
 		{
-			sectionHeader: 'Section 4',
-			fields: [{ label: 'Birthday', basis: '1/1' }]
+			sectionHeader: 'Section 11',
+			fields: [{ key: 'eyes', label: 'Eye Color', basis: '1/1', maxlength: 3 }]
 		}
 	];
 </script>
 
-{#each sections as section}
-	{#if section.sectionHeader === 'Section 4'}
-		<DateInputSection {section}></DateInputSection>
-	{:else}
-		<InputSection {section}></InputSection>
-	{/if}
-{/each}
+<div class="flex flex-col gap-4">
+	{#each sections as section}
+		{#if section.sectionHeader === 'Section 4'}
+			<DateInputSection {section}></DateInputSection>
+		{:else}
+			<InputSection {section}></InputSection>
+		{/if}
+	{/each}
+</div>

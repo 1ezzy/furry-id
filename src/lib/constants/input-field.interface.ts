@@ -6,4 +6,7 @@ export interface InputField {
 	label: string;
 	basis: BasisKey;
 	maxlength?: number;
+	mask?: string;
+	replace?: string;
+	placeholder?: string;
 }

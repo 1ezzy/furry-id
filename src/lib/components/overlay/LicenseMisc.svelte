@@ -1,6 +1,8 @@
 <script>
 	import { Icon } from 'svelte-ux';
 	import { LucidePawPrint } from '@lucide/svelte';
+	import { licenseStore } from '$lib/store/license-store.svelte';
+	import { formatDateForLicense } from '$lib/utils/format-date-for-license';
 </script>
 
 <!-- Title -->
@@ -25,10 +27,22 @@
 <!-- Secondary Photo With License # and Birthday -->
 <div class="absolute top-[73%] left-[65.5%] h-[15%] w-[25%] rounded-lg bg-gray-100">
 	<div class="absolute top-[2%] left-[8%] flex h-[1.5cqw] items-center">
-		<span class="font-[Arial] text-[1.1cqw] font-bold text-black">NG133767</span>
+		<span
+			class="font-[Arial] text-[1.1cqw] font-bold text-black"
+			class:opacity-60={licenseStore.licenseNumber.length === 0}
+		>
+			{licenseStore.licenseNumber.length > 0
+				? licenseStore.licenseNumber.toUpperCase()
+				: 'AB123456'}
+		</span>
 	</div>
 	<div class="absolute top-[60%] left-[8%] flex h-[1.5cqw] items-center">
-		<span class="font-[Arial] text-[1.1cqw] text-black">03-04-2000</span>
+		<span
+			class="font-[Arial] text-[1.1cqw] text-black"
+			class:opacity-60={licenseStore.birthday === null}
+		>
+			{licenseStore.birthday !== null ? formatDateForLicense(licenseStore.birthday) : '01/01/2000'}
+		</span>
 	</div>
 </div>
 <div
