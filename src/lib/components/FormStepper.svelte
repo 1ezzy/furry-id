@@ -54,7 +54,7 @@
 	</Button>
 {/snippet}
 
-<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-4 2xl:gap-8">
 	<div
 		class="flex items-center justify-between gap-4 overflow-x-auto pr-4 md:grid md:grid-cols-3 md:grid-rows-2 lg:flex lg:justify-between md:[&>*:nth-child(3n+1)]:justify-self-start md:[&>*:nth-child(3n+2)]:justify-self-center md:[&>*:nth-child(3n+3)]:justify-self-end"
 	>

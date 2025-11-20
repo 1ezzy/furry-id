@@ -6,7 +6,7 @@
 	let stepValue: number | undefined = $state();
 </script>
 
-<div class="flex flex-col justify-between gap-4 overflow-y-auto">
+<div class="flex flex-col justify-between gap-4 overflow-y-auto 2xl:gap-8">
 	<FormStepper
 		stepchange={(index: number) => {
 			stepValue = index;
