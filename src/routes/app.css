@@ -110,6 +110,7 @@
 	--color-danger-700: hsl(357.1922 57.9396% 52.4168%);
 	--color-danger-800: hsl(357.1922 53.6188% 43.5134%);
 	--color-danger-900: hsl(357.1922 55.0988% 34.9232%);
+	--color-border: black;
 }
 [data-theme='dark'] {
 	color-scheme: dark;
@@ -213,6 +214,7 @@
 	--color-danger-700: hsl(11.4 36.6169% 59.4854%);
 	--color-danger-800: hsl(11.4 25.3652% 49.4954%);
 	--color-danger-900: hsl(11.4 25.9786% 39.8568%);
+	--color-border: white;
 }
 
 h1 {
