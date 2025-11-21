@@ -242,8 +242,12 @@ h1 {
 	}
 }
 
-button.stepper-icon span {
+button.icon span {
 	display: flex;
 	height: 20px;
 	width: 20px;
+}
+
+.svelte-easy-crop-container {
+	border-radius: 4px;
 }

@@ -12,6 +12,7 @@ export class LicenseStore {
 	gender = $state('');
 	height = $state('');
 	eyes = $state('');
+	mainPhoto = $state('');
 }
 
 export const licenseStore = new LicenseStore();

@@ -33,11 +33,11 @@
 <div class="flex flex-col gap-4 2xl:gap-8">
 	{#each sections as section}
 		{#if section.sectionHeader === 'Section 4'}
-			<DateInputSection {section}></DateInputSection>
+			<DateInputSection {section} />
 		{:else if section.sectionHeader === 'Section 6'}
-			<CountryInputSection {section}></CountryInputSection>
+			<CountryInputSection {section} />
 		{:else}
-			<InputSection {section}></InputSection>
+			<InputSection {section} />
 		{/if}
 	{/each}
 </div>

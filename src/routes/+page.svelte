@@ -12,13 +12,15 @@
 	>
 		{title}
 	</h1>
-	<div class="flex h-fit w-full flex-1 flex-col items-start gap-24 md:h-0 md:flex-row 2xl:gap-40">
+	<div
+		class="flex h-fit w-full flex-1 flex-col items-start gap-16 md:h-0 md:flex-row xl:gap-24 2xl:gap-40"
+	>
 		<div class="flex w-full basis-3/5 flex-col gap-2">
-			<h2 class="text-secondary text-2xl font-bold">[Preview]</h2>
-			<LicenseOverlay></LicenseOverlay>
+			<h2 class="text-secondary text-4xl font-bold">[Preview]</h2>
+			<LicenseOverlay />
 		</div>
 		<div class="flex w-full flex-1 basis-2/5 flex-col gap-8 overflow-y-auto md:h-full">
-			<AllFormSections></AllFormSections>
+			<AllFormSections />
 		</div>
 	</div>
 </PageShell>

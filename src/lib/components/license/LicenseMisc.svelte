@@ -27,7 +27,11 @@
 <div
 	class="absolute top-[25%] left-[4%] flex h-[54%] w-[26%] items-center justify-center rounded-2xl bg-gray-100"
 >
-	<img src="/src/lib/assets/headshot.png" alt="Main Headshot" />
+	<img
+		src={licenseStore.mainPhoto}
+		alt="Main Headshot"
+		class="h-full w-full rounded-2xl object-scale-down"
+	/>
 </div>
 
 <!-- Secondary Photo With License # and Birthday -->
@@ -54,5 +58,9 @@
 <div
 	class="absolute top-[70.5%] left-[82.5%] flex aspect-square h-[20%] items-center justify-center rounded-full bg-gray-100"
 >
-	<img class="aspect-square h-[70%]" src="/src/lib/assets/headshot.png" alt="Main Headshot" />
+	<img
+		src={licenseStore.mainPhoto}
+		alt="Main Headshot"
+		class="aspect-square h-[70%] rounded-2xl object-scale-down"
+	/>
 </div>

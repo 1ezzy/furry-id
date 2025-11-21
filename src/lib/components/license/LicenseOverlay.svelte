@@ -8,7 +8,7 @@
 	<!-- <div
 		class="h-full w-full rounded-2xl bg-[url('/license.jpeg')] bg-cover bg-center opacity-30"
 	></div> -->
-	<LicenseLabels></LicenseLabels>
-	<LicenseIndicator></LicenseIndicator>
-	<LicenseMisc></LicenseMisc>
+	<LicenseLabels />
+	<LicenseIndicator />
+	<LicenseMisc />
 </div>

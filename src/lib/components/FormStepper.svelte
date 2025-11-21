@@ -28,7 +28,7 @@
 
 {#snippet stepperButton(index: number, icon: any)}
 	<Button
-		class="stepper-icon flex aspect-square h-10 w-10"
+		class="icon flex aspect-square h-10 w-10"
 		color={stepValue === index ? 'secondary' : 'primary'}
 		variant="fill"
 		{icon}
