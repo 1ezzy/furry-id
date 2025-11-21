@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { Button, getSettings, settings, ThemeInit, ThemeSwitch } from 'svelte-ux';
 	import favicon from '$lib/assets/favicon.svg';
 
@@ -15,6 +16,10 @@
 	});
 
 	const { currentTheme } = getSettings();
+	onMount(() => {
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		currentTheme.setTheme(prefersDark ? 'dark' : 'light');
+	});
 </script>
 
 <ThemeInit />
