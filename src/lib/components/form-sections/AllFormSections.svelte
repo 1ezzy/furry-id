@@ -3,6 +3,7 @@
 	import FormSection2 from '$lib/components/form-sections/FormSection2.svelte';
 	import FormSection3 from '$lib/components/form-sections/FormSection3.svelte';
 	import FormSection4 from '$lib/components/form-sections/FormSection4.svelte';
+	import FormSection5 from '$lib/components/form-sections/FormSection5.svelte';
 	import FormStepper from '$lib/components/FormStepper.svelte';
 
 	let stepValue = $state<number | undefined>();
@@ -23,6 +24,8 @@
 			<FormSection3 />
 		{:else if stepValue === 4}
 			<FormSection4 />
+		{:else if stepValue === 5}
+			<FormSection5 />
 		{/if}
 	</div>
 </div>

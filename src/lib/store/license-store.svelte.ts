@@ -1,3 +1,5 @@
+import { BackgroundType } from '$lib/constants/background-type.enum';
+
 export class LicenseStore {
 	licenseNumber = $state<string>('');
 	firstName = $state<string>('');
@@ -14,6 +16,7 @@ export class LicenseStore {
 	eyes = $state<string>('');
 	mainPhoto = $state<string>('');
 	signature: { path: string; width: number; height: number }[] = $state([]);
+	backgroundType = $state<BackgroundType>(BackgroundType.gradient);
 }
 
 export const licenseStore = new LicenseStore();

@@ -5,8 +5,7 @@
 		LucidePencilRuler,
 		LucideImage,
 		LucideSignature,
-		LucidePalette,
-		LucideCircleCheckBig
+		LucidePalette
 	} from '@lucide/svelte';
 
 	let { stepchange } = $props();
@@ -21,14 +20,13 @@
 		{ icon: LucidePencilRuler },
 		{ icon: LucideImage },
 		{ icon: LucideSignature },
-		{ icon: LucidePalette },
-		{ icon: LucideCircleCheckBig }
+		{ icon: LucidePalette }
 	];
 </script>
 
 {#snippet stepperButton(index: number, icon: any)}
 	<Button
-		class="icon flex aspect-square h-10 w-10"
+		class="icon flex aspect-square h-8 w-8 lg:h-10 lg:w-10"
 		color={stepValue === index ? 'secondary' : 'primary'}
 		variant="fill"
 		{icon}
@@ -55,9 +53,7 @@
 {/snippet}
 
 <div class="flex flex-col gap-4 2xl:gap-8">
-	<div
-		class="flex items-center justify-between gap-4 overflow-x-auto pr-4 md:grid md:grid-cols-3 md:grid-rows-2 lg:flex lg:justify-between md:[&>*:nth-child(3n+1)]:justify-self-start md:[&>*:nth-child(3n+2)]:justify-self-center md:[&>*:nth-child(3n+3)]:justify-self-end"
-	>
+	<div class="flex items-center justify-between gap-4 overflow-x-auto pr-4">
 		{#each buttons as button, i}
 			{@render stepperButton(i + 1, button.icon)}
 		{/each}

@@ -15,7 +15,7 @@
 	</div>
 </div>
 <div class="block h-full md:hidden">
-	<div class="flex w-full flex-1 flex-col gap-16 px-8 py-16">
+	<div class="flex w-full flex-1 flex-col gap-16 px-8 pt-8 pb-16">
 		{@render children()}
 	</div>
 </div>

@@ -93,6 +93,9 @@ importers:
       svelte:
         specifier: ^5.41.0
         version: 5.43.14
+      svelte-awesome-color-picker:
+        specifier: ^4.1.0
+        version: 4.1.0(svelte@5.43.14)
       svelte-check:
         specifier: ^4.3.3
         version: 4.3.4(picomatch@4.0.3)(svelte@5.43.14)(typescript@5.9.3)
@@ -1095,6 +1098,9 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
+  colord@2.9.3:
+    resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
+
   commander@7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
@@ -1975,6 +1981,16 @@ packages:
   sveld@0.22.5:
     resolution: {integrity: sha512-YI/ie2hSSJ7VInFR+nOqW2hrDuymuFbR8qtUctLTxekwg8iNi7Fxn3HgVYhnI4CkClM7PqOM+JfYKBqQRvPgrw==}
     hasBin: true
+
+  svelte-awesome-color-picker@4.1.0:
+    resolution: {integrity: sha512-afiSB3eTBlqu96f4+rjBvqG3eCaLwuneNYHe587Wr4Ien6yQWeztGZunPT0FmiI7wFFBVNUlJQLYutII8LfQUg==}
+    peerDependencies:
+      svelte: ^5.0.0
+
+  svelte-awesome-slider@2.0.0:
+    resolution: {integrity: sha512-YBkOdYm1Feaqsn2JkJBRs+Kc/X3Qy/3GuVmI7GmoYDjBaHkjx9uH4khTuED22z57Hg3gGWeDhp/clIjWDdLNaw==}
+    peerDependencies:
+      svelte: ^5.0.0
 
   svelte-check@4.3.4:
     resolution: {integrity: sha512-DVWvxhBrDsd+0hHWKfjP99lsSXASeOhHJYyuKOFYJcP7ThfSCKgjVarE8XfuMWpS5JV3AlDf+iK1YGGo2TACdw==}
@@ -3233,6 +3249,8 @@ snapshots:
 
   color-name@1.1.4: {}
 
+  colord@2.9.3: {}
+
   commander@7.2.0: {}
 
   comment-parser@1.4.1: {}
@@ -4081,6 +4099,16 @@ snapshots:
       - sass
       - stylus
       - sugarss
+
+  svelte-awesome-color-picker@4.1.0(svelte@5.43.14):
+    dependencies:
+      colord: 2.9.3
+      svelte: 5.43.14
+      svelte-awesome-slider: 2.0.0(svelte@5.43.14)
+
+  svelte-awesome-slider@2.0.0(svelte@5.43.14):
+    dependencies:
+      svelte: 5.43.14
 
   svelte-check@4.3.4(picomatch@4.0.3)(svelte@5.43.14)(typescript@5.9.3):
     dependencies:

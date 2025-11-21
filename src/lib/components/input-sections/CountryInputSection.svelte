@@ -45,7 +45,7 @@
 				label={field.label}
 				{options}
 				bind:value={selectedValue}
-				on:change={(val) => {
+				onchange={(val: CustomEvent) => {
 					if (val.detail.value === undefined) updateCountry();
 				}}
 			>
