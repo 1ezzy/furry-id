@@ -10,7 +10,7 @@
 	} from '@lucide/svelte';
 
 	let { stepchange } = $props();
-	let stepValue: number = $state(1);
+	let stepValue = $state<number>(1);
 
 	$effect(() => {
 		stepchange(stepValue);

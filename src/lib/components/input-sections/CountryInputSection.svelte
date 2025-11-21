@@ -15,7 +15,7 @@
 		}))
 		.sort((a, b) => a.label.localeCompare(b.label));
 
-	let selectedValue = $state(licenseStore.country.value);
+	let selectedValue = $state<string>(licenseStore.country.value);
 	$effect(() => {
 		const selectedCountry = options.find((opt) => opt.value === selectedValue);
 		if (selectedCountry) {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ImageInputSection from '../input-sections/ImageInputSection.svelte';
+	import ImageInputSection from '$lib/components/input-sections/ImageInputSection.svelte';
 </script>
 
 <div class="flex flex-1 flex-col gap-4 2xl:gap-8">

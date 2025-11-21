@@ -1,18 +1,19 @@
 export class LicenseStore {
-	licenseNumber = $state('');
-	firstName = $state('');
-	secondName = $state('');
+	licenseNumber = $state<string>('');
+	firstName = $state<string>('');
+	secondName = $state<string>('');
 	birthday = $state<Date | null>(null);
-	species = $state('');
+	species = $state<string>('');
 	country = $state({
 		label: '',
 		value: '',
 		icon: ''
 	});
-	gender = $state('');
-	height = $state('');
-	eyes = $state('');
-	mainPhoto = $state('');
+	gender = $state<string>('');
+	height = $state<string>('');
+	eyes = $state<string>('');
+	mainPhoto = $state<string>('');
+	signature: { path: string; width: number; height: number }[] = $state([]);
 }
 
 export const licenseStore = new LicenseStore();

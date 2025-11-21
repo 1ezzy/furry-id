@@ -5,9 +5,9 @@
 	import { LucideX } from '@lucide/svelte';
 
 	let crop = $state({ x: 0, y: 0 });
-	let zoom = $state(1);
-	let croppedAreaPixels: CropArea | undefined = $state();
-	let originalImage = $state('');
+	let zoom = $state<number>(1);
+	let croppedAreaPixels = $state<CropArea | undefined>();
+	let originalImage = $state<string>('');
 
 	let fileInput: HTMLInputElement;
 
