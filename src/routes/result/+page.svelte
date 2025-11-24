@@ -20,7 +20,7 @@
 				/>
 			{/if}
 		</div>
-		<div class="flex w-full shrink-0 flex-col items-center gap-16 self-center 2xl:w-[50vw]">
+		<div class="flex w-full shrink-0 flex-col items-center gap-8 self-center 2xl:w-[50vw]">
 			<Button size="lg" class="w-full" color="primary" variant="fill">Download</Button>
 			<Button size="lg" class="w-full" color="primary" variant="fill">Share</Button>
 		</div>

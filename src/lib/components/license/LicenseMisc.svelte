@@ -14,7 +14,9 @@
 
 <!-- Country Flag in Place of State Name -->
 <div class="absolute top-[5%] left-[4%] flex aspect-300/225 items-center justify-center">
-	<span class="fi fi-{licenseStore.country.value} text-[] h-full flex-1 rounded-md md:text-[4cqw]">
+	<span
+		class="fi fi-{licenseStore.country.value} h-full flex-1 rounded-md text-[7.5cqw] md:text-[4cqw]"
+	>
 	</span>
 </div>
 
