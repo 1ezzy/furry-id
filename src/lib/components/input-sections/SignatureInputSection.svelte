@@ -16,15 +16,21 @@
 	const clear = () => {
 		licenseStore.signature = [];
 	};
+
+	const preventScroll = (e: TouchEvent) => {
+		e.preventDefault();
+	};
 </script>
 
 <div class="light:border-black relative aspect-4/1 w-full rounded-sm border bg-white">
 	<div
-		class="h-full w-full"
+		class="h-full w-full touch-none"
 		use:signature={{ ondraw, oncomplete }}
 		bind:clientWidth={width}
 		bind:clientHeight={height}
-		ontouchmove={(e) => e.preventDefault()}
+		ontouchstart={preventScroll}
+		ontouchmove={preventScroll}
+		ontouchend={preventScroll}
 	>
 		{#each licenseStore.signature as layer}
 			<svg
@@ -44,7 +50,7 @@
 			</svg>
 		{/if}
 	</div>
-	<Button color="danger" variant="fill-outline" class="absolute top-2 right-2 " onclick={clear}>
+	<Button color="danger" variant="fill-outline" class="absolute top-2 right-2" onclick={clear}>
 		Clear
 	</Button>
 </div>
