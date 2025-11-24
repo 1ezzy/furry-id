@@ -68,7 +68,7 @@
 			croppedAreaPixels.height
 		);
 
-		licenseStore.mainPhoto = canvas.toDataURL('image/svg');
+		licenseStore.mainPhoto = canvas.toDataURL('image/png');
 	};
 
 	const resetCroppedImage = () => {

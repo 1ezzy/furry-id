@@ -1,6 +1,6 @@
 <script lang="ts">
+	import html2canvas from 'html2canvas-pro';
 	import { Button } from 'svelte-ux';
-	import { toPng } from 'html-to-image';
 	import { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import AllFormSections from '$lib/components/form-sections/AllFormSections.svelte';
@@ -47,37 +47,27 @@
 	});
 	const isFormValid = $derived($allErrors.length === 0 && licenseStore.isValid);
 
-	const generateImage = async () => {
+	const generateImage = () => {
 		const licenseOverlay = document.getElementById('license-overlay');
 
 		if (licenseOverlay) {
-			const fontEmbedCSS = `
-			@font-face {
-				font-family: 'Gamja Flower';
-				src: url('/fonts/GamjaFlower-Regular.tff') format('truetype');
-				font-weight: normal;
-				font-style: normal;
-			}
-			@font-face {
-				font-family: 'Roboto Condensed';
-				src: url('/fonts/RobotoCondensed-Regular.tff') format('truetype');
-				font-weight: normal;
-				font-style: normal;
-			}
-      `;
+			const canvasWidth = 2140;
+			const scale = canvasWidth / licenseOverlay.offsetWidth;
 
-			try {
-				const dataUrl = await toPng(licenseOverlay, {
-					canvasWidth: 2140,
-					canvasHeight: 1350,
-					pixelRatio: 2,
-					fontEmbedCSS
+			html2canvas(licenseOverlay, {
+				scale: scale,
+				useCORS: true,
+				allowTaint: true,
+				backgroundColor: null // Use null for transparent background
+			})
+				.then((canvas) => {
+					const dataUrl = canvas.toDataURL('image/png');
+					licenseStore.generatedLicenseImage = dataUrl;
+					goto('/result');
+				})
+				.catch((err) => {
+					console.error('oops, something went wrong!', err);
 				});
-				licenseStore.generatedLicenseImage = dataUrl;
-				goto('/result');
-			} catch (err) {
-				console.error('oops, something went wrong!', err);
-			}
 		}
 	};
 </script>
