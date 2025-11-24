@@ -1,9 +1,12 @@
 <script lang="ts">
-	import { Button } from 'svelte-ux';
+	import { Button, Dialog } from 'svelte-ux';
 	import { toPng } from 'html-to-image';
 	import AllFormSections from '$lib/components/form-sections/AllFormSections.svelte';
 	import LicenseOverlay from '$lib/components/license/LicenseOverlay.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
+	import ConfirmLicenseModalBody from '$lib/components/ConfirmLicenseModalBody.svelte';
+
+	let confirmImageModalOpen = $state<boolean>(false);
 
 	const generateImage = () => {
 		const licenseOverlay = document.getElementById('license-overlay');
@@ -28,6 +31,15 @@
 	};
 </script>
 
+<Dialog bind:open={confirmImageModalOpen}>
+	<div class="text-primary mb-2 text-6xl" slot="title">Confirm License Details</div>
+	<ConfirmLicenseModalBody />
+	<div slot="actions">
+		<Button variant="fill" color="danger">Cancel</Button>
+		<Button variant="fill" color="success" onclick={generateImage}>Confirm</Button>
+	</div>
+</Dialog>
+
 <PageShell>
 	<h1
 		class="from-primary to-secondary flex bg-linear-to-tr bg-clip-text py-1 text-center text-6xl text-transparent md:text-start"
@@ -41,9 +53,17 @@
 			<LicenseOverlay />
 			<div class="flex items-center justify-between gap-16">
 				<h2 class="text-secondary text-4xl font-bold">[Preview]</h2>
-				<Button class="flex-1" variant="fill" color="success" size="lg" onclick={generateImage}
-					>Generate License!</Button
+				<Button
+					class="flex-1"
+					variant="fill"
+					color="success"
+					size="lg"
+					onclick={() => {
+						confirmImageModalOpen = true;
+					}}
 				>
+					Generate License!
+				</Button>
 			</div>
 		</div>
 		<div class="flex w-full flex-1 basis-2/5 flex-col gap-8 overflow-y-auto md:h-full">
