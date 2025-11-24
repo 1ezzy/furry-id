@@ -1,8 +1,31 @@
 <script lang="ts">
+	import { Button } from 'svelte-ux';
+	import { toPng } from 'html-to-image';
 	import AllFormSections from '$lib/components/form-sections/AllFormSections.svelte';
 	import LicenseOverlay from '$lib/components/license/LicenseOverlay.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
-	import { Button } from 'svelte-ux';
+
+	const generateImage = () => {
+		const licenseOverlay = document.getElementById('license-overlay');
+
+		if (licenseOverlay) {
+			toPng(licenseOverlay, {
+				canvasWidth: 1350,
+				canvasHeight: 850,
+				pixelRatio: 1,
+				fontEmbedCSS: `
+                    @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+                    @import url('https://fonts.googleapis.com/css2?family=Arial+Narrow&display=swap');
+                `
+			})
+				.then((dataUrl) => {
+					// do stuff with the generated image
+				})
+				.catch((err) => {
+					console.error('oops, something went wrong!', err);
+				});
+		}
+	};
 </script>
 
 <PageShell>
@@ -18,7 +41,9 @@
 			<LicenseOverlay />
 			<div class="flex items-center justify-between gap-16">
 				<h2 class="text-secondary text-4xl font-bold">[Preview]</h2>
-				<Button class="flex-1" variant="fill" color="success" size="lg">Generate License!</Button>
+				<Button class="flex-1" variant="fill" color="success" size="lg" onclick={generateImage}
+					>Generate License!</Button
+				>
 			</div>
 		</div>
 		<div class="flex w-full flex-1 basis-2/5 flex-col gap-8 overflow-y-auto md:h-full">

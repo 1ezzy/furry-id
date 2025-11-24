@@ -31,6 +31,7 @@
 </script>
 
 <div
+	id="license-overlay"
 	class="relative flex aspect-214/135 max-h-[80vw] rounded-2xl border-2 border-black bg-auto dark:border-white"
 	style={computedStyle}
 >
