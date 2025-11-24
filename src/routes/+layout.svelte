@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Button, getSettings, settings, ThemeInit, ThemeSwitch } from 'svelte-ux';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.png';
 
 	import 'flag-icons/css/flag-icons.min.css';
 	import './app.css';

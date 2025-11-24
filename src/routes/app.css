@@ -5,6 +5,21 @@
 @source '../../node_modules/svelte-ux/dist';
 @source '../../node_modules/layerchart/dist';
 
+@font-face {
+	font-family: 'Gamja Flower';
+	src: url('/fonts/GamjaFlower-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('/fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto Condensed';
+	src: url('/fonts/RobotoCondensed-VariableFont_wght.ttf') format('truetype');
+}
+
 [data-theme='light'] {
 	color-scheme: light;
 	--color-primary: hsl(183.0303 47.3684% 59.0196%);

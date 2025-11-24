@@ -7,7 +7,9 @@
 
 <!-- Title -->
 <div class="absolute top-[8%] left-[25.5%] flex h-[2cqw]">
-	<span class="font-['Arial_Narrow'] text-[3.2cqw] font-bold text-black italic md:text-[1.7cqw]">
+	<span
+		class="font-['Roboto_Condensed'] text-[3.2cqw] font-bold text-black italic md:text-[1.7cqw]"
+	>
 		FURRY LICENSE
 	</span>
 </div>
@@ -52,9 +54,9 @@
 
 <!-- Secondary Photo With License #, Signature, and Birthday -->
 <div class="absolute top-[73%] left-[65.5%] h-[15%] w-[25%] rounded-lg bg-gray-100">
-	<div class="absolute top-[8%] left-[6%] flex h-[1.5cqw] items-center">
+	<div class="absolute top-[3%] left-[3%] flex h-[1.5cqw] items-center">
 		<span
-			class="font-[Arial] text-[1.4cqw] font-bold text-black"
+			class="font-[Roboto] text-[1.4cqw] font-bold text-black"
 			class:opacity-60={licenseStore.licenseNumber.length === 0}
 		>
 			{licenseStore.licenseNumber.length > 0
@@ -72,9 +74,9 @@
 			</svg>
 		{/each}
 	</div>
-	<div class="absolute top-[64%] left-[6%] flex h-[1.5cqw] items-center">
+	<div class="absolute top-[64%] left-[3%] flex h-[1.5cqw] items-center">
 		<span
-			class="font-[Arial] text-[1.4cqw] text-black"
+			class="font-[Roboto] text-[1.4cqw] text-black"
 			class:opacity-60={licenseStore.birthday === null}
 		>
 			{licenseStore.birthday !== null ? formatDateForLicense(licenseStore.birthday) : '01/01/2000'}

@@ -47,26 +47,37 @@
 	});
 	const isFormValid = $derived($allErrors.length === 0 && licenseStore.isValid);
 
-	const generateImage = () => {
+	const generateImage = async () => {
 		const licenseOverlay = document.getElementById('license-overlay');
 
 		if (licenseOverlay) {
-			toPng(licenseOverlay, {
-				canvasWidth: 2140,
-				canvasHeight: 1350,
-				pixelRatio: 1,
-				fontEmbedCSS: `
-                    @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
-                    @import url('https://fonts.googleapis.com/css2?family=Arial+Narrow&display=swap');
-                `
-			})
-				.then((dataUrl) => {
-					licenseStore.generatedLicenseImage = dataUrl;
-					goto('/result');
-				})
-				.catch((err) => {
-					console.error('oops, something went wrong!', err);
+			const fontEmbedCSS = `
+			@font-face {
+				font-family: 'Gamja Flower';
+				src: url('/fonts/GamjaFlower-Regular.tff') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: 'Roboto Condensed';
+				src: url('/fonts/RobotoCondensed-Regular.tff') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+			}
+      `;
+
+			try {
+				const dataUrl = await toPng(licenseOverlay, {
+					canvasWidth: 2140,
+					canvasHeight: 1350,
+					pixelRatio: 2,
+					fontEmbedCSS
 				});
+				licenseStore.generatedLicenseImage = dataUrl;
+				goto('/result');
+			} catch (err) {
+				console.error('oops, something went wrong!', err);
+			}
 		}
 	};
 </script>
