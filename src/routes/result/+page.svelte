@@ -10,7 +10,7 @@
 	>
 		Furry License Generator
 	</h1>
-	<div class="flex w-full flex-1 flex-col gap-8 overflow-hidden px-8 xl:gap-12 2xl:gap-20">
+	<div class="flex w-full flex-1 flex-col gap-12 overflow-hidden px-8 2xl:gap-20">
 		<div class="flex aspect-856/540 h-fit max-h-[60vh] min-h-0 w-fit flex-1 self-center">
 			{#if licenseStore.generatedLicenseImage.length > 0}
 				<img
