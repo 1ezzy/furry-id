@@ -22,6 +22,22 @@ export class LicenseStore {
 	gradientDirection = $state<LinearGradientKey>('top-right');
 	primaryColor = $state<string>(generateRandomHex());
 	secondaryColor = $state<string>(generateRandomHex());
+
+	get isValid() {
+		return (
+			this.licenseNumber.length > 0 &&
+			this.firstName.length > 0 &&
+			this.secondName.length > 0 &&
+			this.birthday !== null &&
+			this.species.length > 0 &&
+			this.country.label.length > 0 &&
+			this.gender.length > 0 &&
+			this.height.length > 0 &&
+			this.eyes.length > 0 &&
+			this.mainPhoto.length > 0 &&
+			this.signature.length > 0
+		);
+	}
 }
 
 export const licenseStore = new LicenseStore();
