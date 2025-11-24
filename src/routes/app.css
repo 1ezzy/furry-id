@@ -223,6 +223,12 @@ h1 {
 }
 
 :root {
+	--cp-bg-color: var(--color-surface-100);
+	--cp-border-color: var(--color-border);
+	--cp-text-color: var(--color-border);
+	--cp-input-color: var(--color-surface-300);
+	--cp-button-hover-color: var(--color-surface-200);
+
 	font-family: 'Gamja Flower';
 
 	@media (min-width: 2560px) {
