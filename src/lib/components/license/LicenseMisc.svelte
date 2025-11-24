@@ -15,11 +15,14 @@
 </div>
 
 <!-- Country Flag in Place of State Name -->
-<div class="absolute top-[5%] left-[4%] flex aspect-300/225 items-center justify-center">
-	<span
-		class="fi fi-{licenseStore.country.value} h-full flex-1 rounded-md text-[7.5cqw] md:text-[4cqw]"
-	>
-	</span>
+<div class="absolute top-[5%] left-[4%] flex aspect-4/3 items-center justify-center">
+	{#if licenseStore.country.value}
+		<img
+			class="h-full w-[9.5cqw] rounded-md object-cover md:w-[5.5cqw]"
+			src="https://flagcdn.com/{licenseStore.country.value}.svg"
+			alt={licenseStore.country.label}
+		/>
+	{/if}
 </div>
 
 <!-- Paw Print in place of State -->
