@@ -11,8 +11,8 @@
 	} = {
 		sectionHeader: 'Gradient Colors',
 		fields: [
-			{ label: 'Primary Color', basis: '1/2' },
-			{ label: 'Secondary Color', basis: '1/2' }
+			{ key: 'primaryColor', label: 'Primary Color', basis: '1/2' },
+			{ key: 'secondaryColor', label: 'Secondary Color', basis: '1/2' }
 		]
 	};
 

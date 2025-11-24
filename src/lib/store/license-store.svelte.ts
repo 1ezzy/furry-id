@@ -1,4 +1,6 @@
 import { BackgroundType } from '$lib/constants/background-type.enum';
+import { type LinearGradientKey } from '$lib/constants/linear-gradient-classes';
+import { generateRandomHex } from '$lib/utils/generate-random-hex';
 
 export class LicenseStore {
 	licenseNumber = $state<string>('');
@@ -17,6 +19,9 @@ export class LicenseStore {
 	mainPhoto = $state<string>('');
 	signature: { path: string; width: number; height: number }[] = $state([]);
 	backgroundType = $state<BackgroundType>(BackgroundType.gradient);
+	gradientDirection = $state<LinearGradientKey>('top-right');
+	primaryColor = $state<string>(generateRandomHex());
+	secondaryColor = $state<string>(generateRandomHex());
 }
 
 export const licenseStore = new LicenseStore();

@@ -259,3 +259,7 @@ button.icon span {
 .svelte-easy-crop-container {
 	border-radius: 4px;
 }
+
+.color-picker {
+	width: 100%;
+}
