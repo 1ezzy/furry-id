@@ -50,7 +50,7 @@
 	];
 </script>
 
-<div class="flex gap-8 px-6 pt-2 pb-6">
+<div class="flex flex-col gap-8 px-6 pt-2 pb-6 md:flex-row">
 	<div class="flex flex-col gap-4">
 		<h2
 			class="text-2xl font-bold"
@@ -70,7 +70,9 @@
 			</div>
 		{/each}
 	</div>
-	<div class="w-px max-w-px flex-1 bg-black dark:bg-white"></div>
+	<div
+		class="h-px max-h-px bg-black md:h-full md:max-h-full md:w-px md:max-w-px md:flex-1 dark:bg-white"
+	></div>
 	<div class="flex flex-col gap-2">
 		<h2
 			class="text-2xl font-bold"
