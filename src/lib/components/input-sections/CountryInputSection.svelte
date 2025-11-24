@@ -46,7 +46,7 @@
 				{options}
 				bind:value={selectedValue}
 				onchange={(val: CustomEvent) => {
-					if (val.detail.value === undefined) updateCountry();
+					if (val.detail?.value === undefined) updateCountry();
 				}}
 			>
 				<div slot="option" let:option>

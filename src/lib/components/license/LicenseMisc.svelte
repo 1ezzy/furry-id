@@ -86,7 +86,7 @@
 		<img
 			src={licenseStore.mainPhoto}
 			alt="Secondary Headshot"
-			class="aspect-square h-[70%] rounded-2xl object-scale-down"
+			class="aspect-square h-[70%] rounded-full object-scale-down"
 		/>
 	{/if}
 </div>
