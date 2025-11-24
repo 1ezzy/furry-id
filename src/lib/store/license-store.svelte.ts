@@ -22,6 +22,7 @@ export class LicenseStore {
 	gradientDirection = $state<LinearGradientKey>('top-right');
 	primaryColor = $state<string>(generateRandomHex());
 	secondaryColor = $state<string>(generateRandomHex());
+	generatedLicenseImage = $state<string>('');
 
 	get isValid() {
 		return (

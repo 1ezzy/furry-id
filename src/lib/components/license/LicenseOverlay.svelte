@@ -22,8 +22,6 @@
 				return `background-image: linear-gradient(${gradientDirections[licenseStore.gradientDirection]}, ${licenseStore.primaryColor}, ${licenseStore.secondaryColor});`;
 			case BackgroundType.solid:
 				return `background-color: ${licenseStore.primaryColor}`;
-			case BackgroundType.pattern:
-				return '';
 			default:
 				return `background-color: ${licenseStore.primaryColor}`;
 		}
@@ -32,7 +30,7 @@
 
 <div
 	id="license-overlay"
-	class="relative flex aspect-214/135 max-h-[80vw] rounded-2xl border-2 border-black bg-auto dark:border-white"
+	class="relative flex aspect-856/540 rounded-2xl border-2 border-black bg-auto dark:border-white"
 	style={computedStyle}
 >
 	<LicenseLabels />

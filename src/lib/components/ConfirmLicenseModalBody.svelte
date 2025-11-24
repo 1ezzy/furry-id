@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { licenseStore } from '$lib/store/license-store.svelte';
+	import { formatDateForLicense } from '$lib/utils/format-date-for-license';
 
 	const licenseSections = [
 		{
@@ -10,42 +11,42 @@
 		{
 			sectionHeading: 'First Name: ',
 			conditional: licenseStore.firstName.length > 0,
-			value: licenseStore.firstName
+			value: licenseStore.firstName.toUpperCase()
 		},
 		{
 			sectionHeading: 'Second Name: ',
 			conditional: licenseStore.secondName.length > 0,
-			value: licenseStore.secondName
+			value: licenseStore.secondName.toUpperCase()
 		},
 		{
 			sectionHeading: 'Birthday: ',
-			conditional: licenseStore.birthday,
-			value: licenseStore.birthday
+			conditional: licenseStore.birthday !== null,
+			value: formatDateForLicense(licenseStore.birthday)
 		},
 		{
 			sectionHeading: 'Species: ',
 			conditional: licenseStore.species,
-			value: licenseStore.species
+			value: licenseStore.species.toUpperCase()
 		},
 		{
 			sectionHeading: 'Country: ',
-			conditional: licenseStore.country.label,
-			value: licenseStore.country.label.length > 0
+			conditional: licenseStore.country.label.length > 0,
+			value: licenseStore.country.label.toUpperCase()
 		},
 		{
 			sectionHeading: 'Gender: ',
-			conditional: licenseStore.gender,
-			value: licenseStore.gender.length > 0
+			conditional: licenseStore.gender.length > 0,
+			value: licenseStore.gender
 		},
 		{
 			sectionHeading: 'Height: ',
-			conditional: licenseStore.height,
-			value: licenseStore.height.length > 0
+			conditional: licenseStore.height.length > 0,
+			value: licenseStore.height
 		},
 		{
 			sectionHeading: 'Eyes: ',
-			conditional: licenseStore.eyes,
-			value: licenseStore.eyes.length > 0
+			conditional: licenseStore.eyes.length > 0,
+			value: licenseStore.eyes
 		}
 	];
 </script>

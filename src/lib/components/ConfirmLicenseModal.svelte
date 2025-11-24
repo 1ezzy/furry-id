@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Dialog, Button, Tooltip } from 'svelte-ux';
 	import ConfirmLicenseModalBody from './ConfirmLicenseModalBody.svelte';
 
@@ -23,7 +23,16 @@
 			offset={4}
 		>
 			<div>
-				<Button variant="fill" color="success" onclick={onconfirm} disabled={!isFormValid}>
+				<Button
+					type="button"
+					variant="fill"
+					color="success"
+					onclick={(event: MouseEvent) => {
+						event.preventDefault();
+						onconfirm(event);
+					}}
+					disabled={!isFormValid}
+				>
 					Confirm
 				</Button>
 			</div>

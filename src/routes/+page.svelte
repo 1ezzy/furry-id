@@ -9,6 +9,7 @@
 	import { licenseStore } from '$lib/store/license-store.svelte';
 	import { licenseSchema } from '$lib/store/license-store-schema';
 	import ConfirmLicenseModal from '$lib/components/ConfirmLicenseModal.svelte';
+	import { goto } from '$app/navigation';
 
 	let confirmImageModalOpen = $state<boolean>(false);
 
@@ -51,8 +52,8 @@
 
 		if (licenseOverlay) {
 			toPng(licenseOverlay, {
-				canvasWidth: 1350,
-				canvasHeight: 850,
+				canvasWidth: 2140,
+				canvasHeight: 1350,
 				pixelRatio: 1,
 				fontEmbedCSS: `
                     @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
@@ -60,7 +61,8 @@
                 `
 			})
 				.then((dataUrl) => {
-					// do stuff with the generated image
+					licenseStore.generatedLicenseImage = dataUrl;
+					goto('/result');
 				})
 				.catch((err) => {
 					console.error('oops, something went wrong!', err);
@@ -69,10 +71,7 @@
 	};
 </script>
 
-<ConfirmLicenseModal
-	bind:open={confirmImageModalOpen}
-	{isFormValid}
-	onconfirm={generateImage}
+<ConfirmLicenseModal bind:open={confirmImageModalOpen} {isFormValid} onconfirm={generateImage}
 ></ConfirmLicenseModal>
 
 <PageShell>

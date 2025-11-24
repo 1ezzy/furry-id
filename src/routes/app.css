@@ -240,6 +240,10 @@ h1 {
 			font-size: 1.75rem; /* 28px */
 			line-height: 2.25rem; /* 36px */
 		}
+		.text-4xl {
+			font-size: 3rem; /* 48px */
+			line-height: 3.5rem; /* 56px */
+		}
 		.text-6xl {
 			font-size: 4.5rem; /* 72px */
 			line-height: 5rem; /* 80px */
