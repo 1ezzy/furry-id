@@ -112,7 +112,7 @@
 			{/each}
 		{:else}
 			<div
-				class="bg-surface-300 flex aspect-4/1 h-full w-[30vw] items-center justify-center rounded-2xl"
+				class="bg-surface-300 flex aspect-4/1 h-full w-full items-center justify-center rounded-2xl md:w-[30vw]"
 			>
 				<span>Nothing To Show</span>
 			</div>

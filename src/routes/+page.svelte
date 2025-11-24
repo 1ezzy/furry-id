@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { Button, Dialog, Tooltip } from 'svelte-ux';
+	import { Button } from 'svelte-ux';
 	import { toPng } from 'html-to-image';
 	import { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import AllFormSections from '$lib/components/form-sections/AllFormSections.svelte';
 	import LicenseOverlay from '$lib/components/license/LicenseOverlay.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
-	import ConfirmLicenseModalBody from '$lib/components/ConfirmLicenseModalBody.svelte';
 	import { licenseStore } from '$lib/store/license-store.svelte';
 	import { licenseSchema } from '$lib/store/license-store-schema';
+	import ConfirmLicenseModal from '$lib/components/ConfirmLicenseModal.svelte';
 
 	let confirmImageModalOpen = $state<boolean>(false);
 
@@ -69,33 +69,8 @@
 	};
 </script>
 
-<Dialog bind:open={confirmImageModalOpen}>
-	<div class="text-primary mb-2 text-6xl" slot="title">Confirm License Details</div>
-	<ConfirmLicenseModalBody />
-	<div slot="actions" class="flex w-full items-center gap-2 px-2">
-		<div class="flex-1">
-			{#if !isFormValid}
-				<span class="text-danger text-xl font-bold">You have incomplete fields!</span>
-			{:else}
-				<span class="text-success text-xl font-bold">All fields have been completed!</span>
-			{/if}
-		</div>
-		<Button variant="fill" color="danger" onclick={() => (confirmImageModalOpen = false)}>
-			Cancel
-		</Button>
-		<Tooltip
-			title={!isFormValid ? 'You must complete all fields to generate a license.' : ''}
-			placement="top"
-			offset={4}
-		>
-			<div>
-				<Button variant="fill" color="success" onclick={generateImage} disabled={!isFormValid}>
-					Confirm
-				</Button>
-			</div>
-		</Tooltip>
-	</div>
-</Dialog>
+<ConfirmLicenseModal bind:open={confirmImageModalOpen} {isFormValid} onconfirm={generateImage}
+></ConfirmLicenseModal>
 
 <PageShell>
 	<h1
