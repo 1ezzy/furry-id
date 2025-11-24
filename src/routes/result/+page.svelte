@@ -1,7 +1,18 @@
-<script>
+<script lang="ts">
 	import PageShell from '$lib/components/PageShell.svelte';
 	import { licenseStore } from '$lib/store/license-store.svelte';
 	import { Button } from 'svelte-ux';
+
+	const downloadImage = (): void => {
+		if (!licenseStore.generatedLicenseImage) return;
+
+		const link = document.createElement('a');
+		link.href = licenseStore.generatedLicenseImage;
+		link.download = 'furry-license.png';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
 </script>
 
 <PageShell>
@@ -21,8 +32,12 @@
 			{/if}
 		</div>
 		<div class="flex w-full shrink-0 flex-col items-center gap-8 self-center 2xl:w-[50vw]">
-			<Button size="lg" class="w-full" color="primary" variant="fill">Download</Button>
-			<Button size="lg" class="w-full" color="primary" variant="fill">Share</Button>
+			<Button size="lg" class="w-full" color="primary" variant="fill" onclick={downloadImage}>
+				Download
+			</Button>
+			<Button size="lg" class="w-full" color="primary" variant="fill" disabled>
+				Share (coming soon)
+			</Button>
 		</div>
 	</div>
 </PageShell>
