@@ -26,11 +26,10 @@
 	};
 
 	let selectedBackgroundType = $state<BackgroundType>(BackgroundType.gradient);
-	let options: MenuOption[] = [
-		{ label: BackgroundType.gradient, value: BackgroundType.gradient },
-		{ label: BackgroundType.solid, value: BackgroundType.solid },
-		{ label: BackgroundType.pattern, value: BackgroundType.pattern }
-	];
+	const options: MenuOption[] = Object.values(BackgroundType).map((type) => ({
+		label: type,
+		value: type
+	}));
 	$effect(() => {
 		licenseStore.backgroundType = selectedBackgroundType;
 	});

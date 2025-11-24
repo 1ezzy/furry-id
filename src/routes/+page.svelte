@@ -69,7 +69,10 @@
 	};
 </script>
 
-<ConfirmLicenseModal bind:open={confirmImageModalOpen} {isFormValid} onconfirm={generateImage}
+<ConfirmLicenseModal
+	bind:open={confirmImageModalOpen}
+	{isFormValid}
+	onconfirm={generateImage}
 ></ConfirmLicenseModal>
 
 <PageShell>

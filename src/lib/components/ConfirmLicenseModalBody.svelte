@@ -102,14 +102,16 @@
 			Signature Preview
 		</h2>
 		{#if licenseStore.signature[0]}
-			{#each licenseStore.signature as layer}
-				<svg
-					class="pointer-events-none w-[30vw] fill-black"
-					viewBox="0 0 {layer.width} {layer.height}"
-				>
-					<path d={layer.path} />
-				</svg>
-			{/each}
+			<div class="relative aspect-4/1 h-full w-full">
+				{#each licenseStore.signature as layer}
+					<svg
+						class="pointer-events-none absolute h-full w-full fill-black"
+						viewBox="0 0 {layer.width} {layer.height}"
+					>
+						<path d={layer.path} />
+					</svg>
+				{/each}
+			</div>
 		{:else}
 			<div
 				class="bg-surface-300 flex aspect-4/1 h-full w-full items-center justify-center rounded-2xl md:w-[30vw]"
