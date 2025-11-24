@@ -30,6 +30,6 @@
 		{/each}
 	</div>
 	<Button icon={LucideRefreshCcw} variant="fill" color="primary" onclick={randomizeColors}>
-		Randomize Colors
+		Randomize Color{section.fields.length > 1 ? 's' : ''}
 	</Button>
 </div>

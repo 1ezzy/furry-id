@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { MenuField, type MenuOption } from 'svelte-ux';
-	import type { InputField } from '$lib/constants/input-field.interface';
 	import ColorInputSection from '$lib/components/input-sections/ColorInputSection.svelte';
-	import GradientDirectionInputSection from '../input-sections/GradientDirectionInputSection.svelte';
+	import GradientDirectionInputSection from '$lib/components/input-sections/GradientDirectionInputSection.svelte';
+	import type { InputField } from '$lib/constants/input-field.interface';
 	import { BackgroundType } from '$lib/constants/background-type.enum';
+	import { licenseStore } from '$lib/store/license-store.svelte';
 
 	const gradientColorSection: {
 		sectionHeader: string;
@@ -16,19 +17,33 @@
 		]
 	};
 
-	let selectedBackgroundType = $state<number>(1);
+	const solidColorSection: {
+		sectionHeader: string;
+		fields: InputField[];
+	} = {
+		sectionHeader: 'Background Color',
+		fields: [{ key: 'primaryColor', label: 'Color', basis: '1/1' }]
+	};
+
+	let selectedBackgroundType = $state<BackgroundType>(BackgroundType.gradient);
 	let options: MenuOption[] = [
-		{ label: BackgroundType.gradient, value: 1 },
-		{ label: BackgroundType.solid, value: 2 },
-		{ label: BackgroundType.pattern, value: 3 }
+		{ label: BackgroundType.gradient, value: BackgroundType.gradient },
+		{ label: BackgroundType.solid, value: BackgroundType.solid },
+		{ label: BackgroundType.pattern, value: BackgroundType.pattern }
 	];
+	$effect(() => {
+		licenseStore.backgroundType = selectedBackgroundType;
+	});
 </script>
 
 <div class="flex flex-1 flex-col gap-4 2xl:gap-8">
 	<h2 class="text-primary text-2xl">Background and Colors</h2>
 	<MenuField label="Background Type" {options} bind:value={selectedBackgroundType} />
-	{#if selectedBackgroundType === 1}
+	{#if selectedBackgroundType === BackgroundType.gradient}
 		<ColorInputSection section={gradientColorSection} />
 		<GradientDirectionInputSection />
+	{/if}
+	{#if selectedBackgroundType === BackgroundType.solid}
+		<ColorInputSection section={solidColorSection} />
 	{/if}
 </div>
