@@ -65,7 +65,7 @@
 
 <!-- Secondary Photo With License #, Signature, and Birthday -->
 <div class="absolute top-[73%] left-[65.5%] h-[15%] w-[25%] rounded-lg bg-gray-100"></div>
-<div class="absolute top-[71%] left-[67%] h-fit items-center md:top-[73%]">
+<div class="absolute top-[73%] left-[67%] flex h-fit items-center">
 	<span
 		class="font-[Roboto] text-[2.3cqw] font-bold text-black md:text-[1.4cqw]"
 		class:opacity-60={licenseStore.licenseNumber.length === 0}
@@ -73,7 +73,7 @@
 		{licenseStore.licenseNumber.length > 0 ? licenseStore.licenseNumber.toUpperCase() : 'AB123456'}
 	</span>
 </div>
-<div class="absolute top-[79%] left-[70%] flex aspect-4/1 h-[3%] items-center justify-center">
+<div class="absolute top-[79%] left-[69%] flex aspect-4/1 h-[3%] items-center justify-center">
 	{#each licenseStore.signature as layer}
 		<svg
 			class="pointer-events-none absolute h-full w-full fill-black"
