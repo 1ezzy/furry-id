@@ -33,9 +33,6 @@
 	class="relative flex aspect-856/540 rounded-2xl border-2 border-black bg-auto dark:border-white"
 	style={computedStyle}
 >
-	<div
-		class="h-full w-full rounded-2xl bg-[url('/license.jpeg')] bg-cover bg-center opacity-30"
-	></div>
 	<LicenseLabels />
 	<LicenseIndicator />
 	<LicenseMisc />
