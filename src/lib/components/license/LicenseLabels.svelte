@@ -99,7 +99,7 @@
 <!-- Date of Birth -->
 <div class="absolute top-[90.5%] left-[12%] flex h-fit items-center">
 	<span
-		class="font-[Roboto] text-[3cqw] text-black md:text-[1.5cqw]"
+		class="font-[Roboto] text-[2.5cqw] text-black md:text-[1.5cqw]"
 		class:opacity-60={licenseStore.birthday === null}
 	>
 		{licenseStore.birthday !== null ? formatDateForLicense(licenseStore.birthday) : '01/01/2000'}

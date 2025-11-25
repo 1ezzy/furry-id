@@ -86,7 +86,7 @@
 	>
 		<div class="flex w-full basis-3/5 flex-col gap-4 lg:gap-8 2xl:gap-16">
 			<LicenseOverlay />
-			<div class="flex items-center justify-between gap-16">
+			<div class="flex flex-col items-center justify-between gap-4 sm:flex-row sm:gap-16">
 				<h2 class="text-secondary text-4xl font-bold">[Preview]</h2>
 				<Button
 					class="flex-1"

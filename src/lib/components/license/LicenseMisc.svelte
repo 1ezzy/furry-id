@@ -40,7 +40,7 @@
 
 <!-- Main Photo -->
 <div
-	class="absolute top-[25%] left-[4%] flex h-[54%] w-[26%] items-center justify-center rounded-2xl bg-gray-100"
+	class="absolute top-[25%] left-[4%] flex h-[54%] w-[26%] items-center justify-center rounded-md bg-gray-100 md:rounded-2xl"
 >
 	{#if licenseStore.mainPhoto}
 		<img
@@ -64,7 +64,9 @@
 </div>
 
 <!-- Secondary Photo With License #, Signature, and Birthday -->
-<div class="absolute top-[73%] left-[65.5%] h-[15%] w-[25%] rounded-lg bg-gray-100"></div>
+<div
+	class="absolute top-[73%] left-[65.5%] h-[15%] w-[25%] rounded-sm bg-gray-100 md:rounded-lg"
+></div>
 <div class="absolute top-[73%] left-[67%] flex h-fit items-center">
 	<span
 		class="font-[Roboto] text-[2.3cqw] font-bold text-black md:text-[1.4cqw]"
