@@ -10,8 +10,7 @@ export class LicenseStore {
 	species = $state<string>('');
 	country = $state({
 		label: '',
-		value: '',
-		icon: ''
+		value: ''
 	});
 	gender = $state<string>('');
 	height = $state<string>('');

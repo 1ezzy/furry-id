@@ -10,8 +10,7 @@
 	const options = countries
 		.map((country) => ({
 			label: country.name.common,
-			value: country.cca2.toLowerCase(),
-			flag: country.cca2.toLowerCase() // Add flag property
+			value: country.cca2.toLowerCase()
 		}))
 		.sort((a, b) => a.label.localeCompare(b.label));
 
@@ -21,8 +20,7 @@
 		if (selectedCountry) {
 			licenseStore.country = {
 				label: selectedCountry.label,
-				value: selectedCountry.value,
-				icon: `fi fi-${selectedCountry.flag}`
+				value: selectedCountry.value
 			};
 		}
 	});
@@ -30,8 +28,7 @@
 	const updateCountry = () => {
 		licenseStore.country = {
 			label: '',
-			value: '',
-			icon: ''
+			value: ''
 		};
 	};
 </script>
@@ -45,13 +42,13 @@
 				label={field.label}
 				{options}
 				bind:value={selectedValue}
-				onchange={(val: CustomEvent) => {
+				on:change={(val: CustomEvent) => {
 					if (val.detail?.value === undefined) updateCountry();
 				}}
 			>
 				<div slot="option" let:option>
 					<div class="flex items-center gap-2">
-						<span class="fi fi-{option.flag} text-xs"></span>
+						<span class="fi fi-{option.value} text-xs"></span>
 						<span>{option.label}</span>
 					</div>
 				</div>

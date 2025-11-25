@@ -1,8 +1,12 @@
-<script>
+<script lang="ts">
 	import { Icon } from 'svelte-ux';
 	import { LucidePawPrint } from '@lucide/svelte';
 	import { licenseStore } from '$lib/store/license-store.svelte';
 	import { formatDateForLicense } from '$lib/utils/format-date-for-license';
+
+	let flagSrc = $derived<string>(
+		licenseStore.country.value ? `https://flagcdn.com/${licenseStore.country.value}.svg` : ''
+	);
 </script>
 
 <!-- Title -->
@@ -15,11 +19,11 @@
 </div>
 
 <!-- Country Flag in Place of State Name -->
-<div class="absolute top-[5%] left-[4%] flex aspect-4/3 items-center justify-center">
+<div class="absolute top-[5%] left-[4%] flex items-center justify-center">
 	{#if licenseStore.country.value}
 		<img
-			class="h-full w-[9.5cqw] rounded-md object-cover md:w-[5.5cqw]"
-			src="https://flagcdn.com/{licenseStore.country.value}.svg"
+			class="h-full w-[9.5cqw] rounded-md md:w-[5.5cqw]"
+			src={flagSrc}
 			alt={licenseStore.country.label}
 		/>
 	{/if}
