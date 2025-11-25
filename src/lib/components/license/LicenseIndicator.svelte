@@ -4,15 +4,15 @@
 </div>
 
 <!-- Name Indicator -->
-<div class="absolute top-[27%] left-[35%] flex h-fit items-center">
+<div class="absolute top-[27.5%] left-[35%] flex h-fit items-center">
 	<span class="font-['Roboto_Condensed'] text-[1.5cqw] text-blue-900 md:text-[0.8cqw]">2,3</span>
 </div>
 
 <!-- Species and Country Indicators -->
-<div class="absolute top-[38%] left-[35%] flex h-fit items-center">
+<div class="absolute top-[38.5%] left-[35%] flex h-fit items-center">
 	<span class="font-['Roboto_Condensed'] text-[1.5cqw] text-blue-900 md:text-[0.8cqw]">5</span>
 </div>
-<div class="absolute top-[43.5%] left-[35%] flex h-[1.5cqw] items-center">
+<div class="absolute top-[43%] left-[35%] flex h-[1.5cqw] items-center">
 	<span class="font-['Roboto_Condensed'] text-[1.5cqw] text-blue-900 md:text-[0.8cqw]">6</span>
 </div>
 
