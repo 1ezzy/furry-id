@@ -5,6 +5,7 @@
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import AllFormSections from '$lib/components/form-sections/AllFormSections.svelte';
 	import LicenseOverlay from '$lib/components/license/LicenseOverlay.svelte';
+	import LicenseOverlayExport from '$lib/components/license/LicenseOverlayExport.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
 	import { licenseStore } from '$lib/store/license-store.svelte';
 	import { licenseSchema } from '$lib/store/license-store-schema';
@@ -51,11 +52,7 @@
 		const licenseOverlay = document.getElementById('license-overlay');
 
 		if (licenseOverlay) {
-			const canvasWidth = 2140;
-			const scale = canvasWidth / licenseOverlay.offsetWidth;
-
 			html2canvas(licenseOverlay, {
-				scale: scale,
 				useCORS: true,
 				allowTaint: true,
 				backgroundColor: null // Use null for transparent background
@@ -74,6 +71,8 @@
 
 <ConfirmLicenseModal bind:open={confirmImageModalOpen} {isFormValid} onconfirm={generateImage}
 ></ConfirmLicenseModal>
+
+<LicenseOverlayExport />
 
 <PageShell>
 	<h1
