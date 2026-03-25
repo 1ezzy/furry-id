@@ -14,6 +14,7 @@
 	import { resolve } from '$app/paths';
 
 	let confirmImageModalOpen = $state<boolean>(false);
+	let generationError = $state<string>('');
 
 	const { form, allErrors } = superForm(
 		{
@@ -50,12 +51,12 @@
 	const isFormValid = $derived($allErrors.length === 0 && licenseStore.isValid);
 
 	const generateImage = () => {
+		generationError = '';
 		const licenseOverlay = document.getElementById('license-overlay-export');
 
 		if (licenseOverlay) {
 			html2canvas(licenseOverlay, {
 				useCORS: true,
-				allowTaint: true,
 				backgroundColor: null
 			})
 				.then((canvas) => {
@@ -64,7 +65,9 @@
 					goto(resolve('/result'));
 				})
 				.catch((err) => {
-					console.error('oops, something went wrong!', err);
+					console.error('License generation failed:', err);
+					generationError = 'Failed to generate license. Please try again.';
+					confirmImageModalOpen = false;
 				});
 		}
 	};
@@ -100,6 +103,9 @@
 					Generate License!
 				</Button>
 			</div>
+			{#if generationError}
+				<span class="text-danger text-center text-sm font-semibold">{generationError}</span>
+			{/if}
 		</div>
 		<div class="flex w-full flex-1 basis-2/5 flex-col gap-8 overflow-y-auto md:h-full">
 			<AllFormSections oncreate={() => (confirmImageModalOpen = true)} />

@@ -3,15 +3,24 @@ import { getStorage } from 'firebase/storage';
 import { getFirestore } from 'firebase/firestore';
 import { getAnalytics } from 'firebase/analytics';
 import { browser } from '$app/environment';
+import {
+	API_KEY,
+	APP_ID,
+	AUTH_DOMAIN,
+	MEASUREMENT_ID,
+	MESSAGING_SENDER_ID,
+	PROJECT_ID,
+	STORAGE_BUCKET
+} from '$env/static/private';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyDo_IVGgYo6cXI8YaveBhNyOPKa_ULpmJE',
-	authDomain: 'furry-id-firebase.firebaseapp.com',
-	projectId: 'furry-id-firebase',
-	storageBucket: 'furry-id-firebase.firebasestorage.app',
-	messagingSenderId: '40053184452',
-	appId: '1:40053184452:web:b37b7796642830f02fb691',
-	measurementId: 'G-1Z28N2Y7FS'
+	apiKey: API_KEY,
+	authDomain: AUTH_DOMAIN,
+	projectId: PROJECT_ID,
+	storageBucket: STORAGE_BUCKET,
+	messagingSenderId: MESSAGING_SENDER_ID,
+	appId: APP_ID,
+	measurementId: MEASUREMENT_ID
 };
 
 // Initialize Firebase

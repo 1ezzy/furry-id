@@ -1,8 +1,16 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { resolve } from '$app/paths';
+	import { goto } from '$app/navigation';
 	import { Button } from 'svelte-ux';
 	import { licenseStore } from '$lib/store/license-store.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
+
+	onMount(() => {
+		if (!licenseStore.generatedLicenseImage) {
+			goto(resolve('/'));
+		}
+	});
 
 	const downloadImage = (): void => {
 		if (!licenseStore.generatedLicenseImage) return;

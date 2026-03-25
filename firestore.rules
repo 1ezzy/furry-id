@@ -5,8 +5,15 @@ service cloud.firestore {
     match /licenses/{licenseId} {
       // Allow anyone to read
       allow read: if true;
-      // Allow anyone to create
-      allow create: if true;
+      // Allow create with basic field validation to prevent spam/abuse
+      allow create: if request.resource.data.keys().hasAll(['licenseNumber', 'firstName', 'secondName'])
+        && request.resource.data.licenseNumber is string
+        && request.resource.data.licenseNumber.size() <= 8
+        && request.resource.data.firstName is string
+        && request.resource.data.firstName.size() <= 24
+        && request.resource.data.secondName is string
+        && request.resource.data.secondName.size() <= 24
+        && request.resource.data.keys().size() <= 20;
       // No updates or deletes
       allow update, delete: if false;
     }

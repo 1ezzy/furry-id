@@ -4,10 +4,14 @@
 	import { licenseStore } from '$lib/store/license-store.svelte';
 	import { LucideX } from '@lucide/svelte';
 
+	const MAX_FILE_SIZE_MB = 10;
+	const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
+
 	let crop = $state({ x: 0, y: 0 });
 	let zoom = $state<number>(1);
 	let croppedAreaPixels = $state<CropArea | undefined>();
 	let originalImage = $state<string>('');
+	let uploadError = $state<string>('');
 
 	let fileInput: HTMLInputElement;
 
@@ -15,7 +19,14 @@
 		const input = event.target as HTMLInputElement;
 		const file = input.files?.[0];
 
+		uploadError = '';
+
 		if (file && file.type.startsWith('image/')) {
+			if (file.size > MAX_FILE_SIZE_BYTES) {
+				uploadError = `Image must be ${MAX_FILE_SIZE_MB}MB or smaller.`;
+				input.value = '';
+				return;
+			}
 			const reader = new FileReader();
 			reader.onload = (e) => {
 				licenseStore.mainPhoto = e.target?.result as string;
@@ -97,6 +108,9 @@
 			/>
 		{/if}
 	</div>
+	{#if uploadError}
+		<span class="text-danger text-sm font-semibold">{uploadError}</span>
+	{/if}
 	{#if licenseStore.mainPhoto}
 		<div
 			class="relative h-full min-h-32 w-full rounded-sm border border-black md:h-[70%] dark:border-white"
