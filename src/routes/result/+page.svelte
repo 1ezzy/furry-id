@@ -43,7 +43,9 @@
 				/>
 			{/if}
 		</div>
-		<div class="flex w-full shrink-0 flex-row items-center gap-8 self-center 2xl:w-[50vw]">
+		<div
+			class="flex w-full shrink-0 flex-col items-center gap-8 self-center md:flex-row 2xl:w-[50vw]"
+		>
 			<Button href="/" size="lg" class="flex w-full gap-2" color="danger" variant="fill">
 				<ArrowLeft size={16}></ArrowLeft>
 				Go Back
