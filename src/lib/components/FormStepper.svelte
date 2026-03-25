@@ -8,7 +8,7 @@
 		LucidePalette
 	} from '@lucide/svelte';
 
-	let { stepchange } = $props();
+	let { stepchange, oncreate } = $props();
 	let stepValue = $state<number>(1);
 
 	$effect(() => {
@@ -41,18 +41,25 @@
 	<Button disabled={stepValue === 1} size="md" variant="outline" onclick={() => stepValue--}>
 		Prev Page
 	</Button>
-	<Button
-		disabled={stepValue === buttons.length}
-		size="md"
-		variant="outline"
-		color="primary"
-		onclick={() => stepValue++}
-	>
-		Next Page
-	</Button>
+	{#if stepValue === buttons.length}
+		<Button
+			size="md"
+			variant="fill"
+			color="success"
+			onclick={() => {
+				oncreate();
+			}}
+		>
+			Generate
+		</Button>
+	{:else}
+		<Button size="md" variant="outline" color="primary" onclick={() => stepValue++}>
+			Next Page
+		</Button>
+	{/if}
 {/snippet}
 
-<div class="flex flex-col gap-8 2xl:gap-16">
+<div class="flex flex-col gap-4 2xl:gap-16">
 	<div class="flex items-center justify-between gap-4 overflow-x-auto pr-4">
 		{#each buttons as button, i (i)}
 			{@render stepperButton(i + 1, button.icon)}

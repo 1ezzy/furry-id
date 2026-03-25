@@ -11,7 +11,7 @@
 	<div slot="actions" class="flex w-full items-center gap-2 px-4 py-2">
 		<div class="flex-1">
 			{#if !isFormValid}
-				<span class="text-danger text-xl font-bold">You have incomplete fields!</span>
+				<span class="text-danger text-xl font-bold">Fill out all fields before continuing</span>
 			{:else}
 				<span class="text-success text-xl font-bold">All fields have been completed!</span>
 			{/if}
@@ -33,7 +33,7 @@
 					}}
 					disabled={!isFormValid}
 				>
-					Confirm
+					Create
 				</Button>
 			</div>
 		</Tooltip>

@@ -29,7 +29,7 @@
 		},
 		{
 			SPA: true,
-			validators: zodClient(licenseSchema as any),
+			validators: zodClient(licenseSchema as unknown as Parameters<typeof zodClient>[0]),
 			dataType: 'json'
 		}
 	);
@@ -50,7 +50,7 @@
 	const isFormValid = $derived($allErrors.length === 0 && licenseStore.isValid);
 
 	const generateImage = () => {
-		const licenseOverlay = document.getElementById('license-overlay');
+		const licenseOverlay = document.getElementById('license-overlay-export');
 
 		if (licenseOverlay) {
 			html2canvas(licenseOverlay, {
@@ -77,7 +77,7 @@
 
 <PageShell>
 	<h1
-		class="from-primary to-secondary flex bg-linear-to-tr bg-clip-text py-1 text-center text-6xl text-transparent md:text-start"
+		class="dark:from-primary dark:to-secondary flex bg-linear-to-tr from-rose-500 to-sky-500 bg-clip-text py-1 text-center text-6xl text-transparent md:text-start"
 	>
 		Furry License Generator
 	</h1>
@@ -87,9 +87,9 @@
 		<div class="flex w-full basis-3/5 flex-col gap-4 lg:gap-8 2xl:gap-16">
 			<LicenseOverlay />
 			<div class="flex flex-col items-center justify-between gap-4 sm:flex-row sm:gap-16">
-				<h2 class="text-secondary text-4xl font-bold">[Preview]</h2>
+				<h2 class="text-secondary text-3xl font-bold">[License Preview]</h2>
 				<Button
-					class="flex-1"
+					class="h-14 w-full flex-1"
 					variant="fill"
 					color="success"
 					size="lg"
@@ -102,7 +102,7 @@
 			</div>
 		</div>
 		<div class="flex w-full flex-1 basis-2/5 flex-col gap-8 overflow-y-auto md:h-full">
-			<AllFormSections />
+			<AllFormSections oncreate={() => (confirmImageModalOpen = true)} />
 		</div>
 	</div>
 </PageShell>

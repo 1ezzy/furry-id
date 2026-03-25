@@ -6,6 +6,7 @@
 	import FormSection5 from '$lib/components/form-sections/FormSection5.svelte';
 	import FormStepper from '$lib/components/FormStepper.svelte';
 
+	let { oncreate } = $props();
 	let stepValue = $state<number | undefined>();
 </script>
 
@@ -14,6 +15,7 @@
 		stepchange={(index: number) => {
 			stepValue = index;
 		}}
+		{oncreate}
 	/>
 	<div class="flex h-full flex-col justify-between gap-4 pr-0 md:overflow-y-auto md:pr-4">
 		{#if stepValue === 1}

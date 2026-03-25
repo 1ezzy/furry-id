@@ -30,7 +30,7 @@
 
 <div
 	id="license-overlay"
-	class="relative flex aspect-856/540 h-full w-full rounded-2xl border-2 border-black bg-auto dark:border-white"
+	class="@container relative flex aspect-856/540 h-full w-full rounded-2xl border-2 border-black bg-contain tracking-wide dark:border-white"
 	style={computedStyle}
 >
 	<LicenseLabels />

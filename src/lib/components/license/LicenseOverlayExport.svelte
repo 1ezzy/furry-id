@@ -30,12 +30,12 @@
 
 <div class="absolute top-[-9999px] left-[-9999px] h-[1350px] w-[2140px]">
 	<div
-		id="license-overlay"
-		class="relative flex aspect-856/540 h-full w-full rounded-[64px] border-black bg-auto dark:border-white"
+		id="license-overlay-export"
+		class="@container relative flex aspect-856/540 h-full w-full rounded-[64px] border-2 border-black bg-[url($lib/assets/license.png)] bg-contain tracking-wide dark:border-white"
 		style={computedStyle}
 	>
-		<LicenseLabels exportMode={true} />
-		<LicenseIndicator exportMode={true} />
-		<LicenseMisc exportMode={true} />
+		<LicenseLabels />
+		<LicenseIndicator />
+		<LicenseMisc />
 	</div>
 </div>
