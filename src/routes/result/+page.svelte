@@ -1,7 +1,8 @@
 <script lang="ts">
-	import PageShell from '$lib/components/PageShell.svelte';
-	import { licenseStore } from '$lib/store/license-store.svelte';
+	import { resolve } from '$app/paths';
 	import { Button } from 'svelte-ux';
+	import { licenseStore } from '$lib/store/license-store.svelte';
+	import PageShell from '$lib/components/PageShell.svelte';
 
 	const downloadImage = (): void => {
 		if (!licenseStore.generatedLicenseImage) return;
@@ -16,11 +17,13 @@
 </script>
 
 <PageShell>
-	<h1
-		class="from-primary to-secondary flex bg-linear-to-tr bg-clip-text py-1 text-center text-6xl text-transparent md:text-start"
-	>
-		Furry License Generator
-	</h1>
+	<a href={resolve('/')}>
+		<h1
+			class="from-primary to-secondary flex bg-linear-to-tr bg-clip-text py-1 text-center text-6xl text-transparent md:text-start"
+		>
+			Furry License Generator
+		</h1>
+	</a>
 	<div class="flex w-full flex-1 flex-col gap-12 overflow-hidden px-8 2xl:gap-20">
 		<div class="flex aspect-856/540 h-fit max-h-[60vh] min-h-0 w-fit flex-1 self-center">
 			{#if licenseStore.generatedLicenseImage.length > 0}
