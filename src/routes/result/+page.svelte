@@ -5,12 +5,13 @@
 	import { Button } from 'svelte-ux';
 	import { licenseStore } from '$lib/store/license-store.svelte';
 	import PageShell from '$lib/components/PageShell.svelte';
+	import { ArrowLeft } from '@lucide/svelte';
 
-	onMount(() => {
-		if (!licenseStore.generatedLicenseImage) {
-			goto(resolve('/'));
-		}
-	});
+	// onMount(() => {
+	// 	if (!licenseStore.generatedLicenseImage) {
+	// 		goto(resolve('/'));
+	// 	}
+	// });
 
 	const downloadImage = (): void => {
 		if (!licenseStore.generatedLicenseImage) return;
@@ -42,7 +43,11 @@
 				/>
 			{/if}
 		</div>
-		<div class="flex w-full shrink-0 flex-col items-center gap-8 self-center 2xl:w-[50vw]">
+		<div class="flex w-full shrink-0 flex-row items-center gap-8 self-center 2xl:w-[50vw]">
+			<Button href="/" size="lg" class="flex w-full gap-2" color="danger" variant="fill">
+				<ArrowLeft size={16}></ArrowLeft>
+				Go Back
+			</Button>
 			<Button size="lg" class="w-full" color="primary" variant="fill" onclick={downloadImage}>
 				Download
 			</Button>
