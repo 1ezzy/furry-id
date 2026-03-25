@@ -15,7 +15,7 @@
 <div class="flex flex-col gap-2">
 	<h3 class="text-primary text-2xl">{section.sectionHeader}</h3>
 	<div class="flex items-center gap-2">
-		{#each section.fields as field, index}
+		{#each section.fields as field, index (index)}
 			<Field class={basisClasses[field.basis]} label={field.label}>
 				<ColorPicker
 					bind:hex={licenseStore[field.key] as string}

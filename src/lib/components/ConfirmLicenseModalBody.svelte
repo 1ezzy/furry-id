@@ -60,7 +60,7 @@
 		>
 			General Information
 		</h2>
-		{#each licenseSections as section}
+		{#each licenseSections as section (`${section.sectionHeading}-${section.value}`)}
 			<div class="flex gap-2">
 				<h3 class="font-bold" class:text-success={section.value} class:text-danger={!section.value}>
 					{section.sectionHeading}
@@ -104,7 +104,7 @@
 		</h2>
 		{#if licenseStore.signature[0]}
 			<div class="relative aspect-4/1 h-full w-full">
-				{#each licenseStore.signature as layer}
+				{#each licenseStore.signature as layer (layer.path)}
 					<svg
 						class="pointer-events-none absolute h-full w-full fill-black"
 						viewBox="0 0 {layer.width} {layer.height}"

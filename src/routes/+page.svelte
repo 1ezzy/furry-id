@@ -11,10 +11,11 @@
 	import { licenseSchema } from '$lib/store/license-store-schema';
 	import ConfirmLicenseModal from '$lib/components/ConfirmLicenseModal.svelte';
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 
 	let confirmImageModalOpen = $state<boolean>(false);
 
-	const { form, errors, validate, validateForm, allErrors } = superForm(
+	const { form, allErrors } = superForm(
 		{
 			firstName: licenseStore.firstName,
 			secondName: licenseStore.secondName,
@@ -55,12 +56,12 @@
 			html2canvas(licenseOverlay, {
 				useCORS: true,
 				allowTaint: true,
-				backgroundColor: null // Use null for transparent background
+				backgroundColor: null
 			})
 				.then((canvas) => {
 					const dataUrl = canvas.toDataURL('image/png');
 					licenseStore.generatedLicenseImage = dataUrl;
-					goto('/result');
+					goto(resolve('/result'));
 				})
 				.catch((err) => {
 					console.error('oops, something went wrong!', err);

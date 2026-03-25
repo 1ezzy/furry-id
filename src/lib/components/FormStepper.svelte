@@ -24,9 +24,9 @@
 	];
 </script>
 
-{#snippet stepperButton(index: number, icon: any)}
+{#snippet stepperButton(index: number, icon)}
 	<Button
-		class="icon flex aspect-square h-8 w-8 lg:h-10 lg:w-10"
+		class="icon flex aspect-square h-8 w-8 lg:h-10 lg:w-10 2xl:h-16 2xl:w-16"
 		color={stepValue === index ? 'secondary' : 'primary'}
 		variant="fill"
 		{icon}
@@ -52,9 +52,9 @@
 	</Button>
 {/snippet}
 
-<div class="flex flex-col gap-4 2xl:gap-8">
+<div class="flex flex-col gap-8 2xl:gap-16">
 	<div class="flex items-center justify-between gap-4 overflow-x-auto pr-4">
-		{#each buttons as button, i}
+		{#each buttons as button, i (i)}
 			{@render stepperButton(i + 1, button.icon)}
 		{/each}
 	</div>

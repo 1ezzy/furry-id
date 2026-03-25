@@ -31,7 +31,7 @@
 </script>
 
 <div class="flex flex-col gap-4 2xl:gap-8">
-	{#each sections as section}
+	{#each sections as section (section.fields)}
 		{#if section.sectionHeader === 'Section 4'}
 			<DateInputSection {section} />
 		{:else if section.sectionHeader === 'Section 6'}

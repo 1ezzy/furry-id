@@ -10,7 +10,7 @@
 <div class="flex flex-col gap-2">
 	<h3 class="text-primary text-2xl">{section.sectionHeader}</h3>
 	<div class="flex gap-2">
-		{#each section.fields as field}
+		{#each section.fields as field (field.key)}
 			<DateField
 				bind:value={licenseStore[field.key] as Date}
 				class={basisClasses[field.basis]}

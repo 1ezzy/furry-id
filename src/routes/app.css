@@ -28,7 +28,7 @@
 	--color-neutral: hsl(280 46.4789% 13.9216%);
 	--color-surface-100: hsl(24 33.3333% 97.0588%);
 	--color-surface-200: hsl(26.6667 21.9512% 91.9608%);
-	--color-surface-300: hsl(22.5 14.2857% 89.0196%);
+	--color-surface-300: hsl(22.5 18% 87.5%);
 	--color-surface-content: hsl(280 46.4789% 13.9216%);
 	--rounded-btn: 1.9rem;
 	--tab-border: 2px;
@@ -246,27 +246,135 @@ h1 {
 
 	font-family: 'Gamja Flower';
 
-	@media (min-width: 2560px) {
-		.text-sm {
-			font-size: 16px;
-			line-height: 1.5;
-		}
-		.text-2xl {
-			font-size: 1.75rem; /* 28px */
-			line-height: 2.25rem; /* 36px */
-		}
-		.text-4xl {
-			font-size: 3rem; /* 48px */
-			line-height: 3.5rem; /* 56px */
-		}
-		.text-6xl {
-			font-size: 4.5rem; /* 72px */
-			line-height: 5rem; /* 80px */
+	@media (min-width: 1920px) {
+		.text-xs {
+			font-size: 18px;
+			line-height: 22px;
 		}
 
-		font-size: 18px;
-		line-height: 1.75;
+		.text-sm {
+			font-size: 21px;
+			line-height: 26px;
+		}
+
+		.text-md {
+			font-size: 24px;
+			line-height: 30px;
+		}
+
+		.text-xl {
+			font-size: 30px;
+			line-height: 36px;
+		}
+
+		.text-2xl {
+			font-size: 36px;
+			line-height: 42px;
+		}
+
+		.text-4xl {
+			font-size: 54px;
+			line-height: 56px;
+		}
+
+		.text-6xl {
+			font-size: 90px;
+			line-height: 94px;
+		}
+
+		.text-8xl {
+			font-size: 144px;
+			line-height: 148px;
+		}
 	}
+
+	@media (min-width: 2560px) {
+		.text-xs {
+			font-size: 24px;
+			line-height: 29px;
+		}
+
+		.text-sm {
+			font-size: 28px;
+			line-height: 34px;
+		}
+
+		.text-md {
+			font-size: 32px;
+			line-height: 40px;
+		}
+
+		.text-xl {
+			font-size: 40px;
+			line-height: 48px;
+		}
+
+		.text-2xl {
+			font-size: 48px;
+			line-height: 56px;
+		}
+
+		.text-4xl {
+			font-size: 72px;
+			line-height: 76px;
+		}
+
+		.text-6xl {
+			font-size: 120px;
+			line-height: 126px;
+		}
+
+		.text-8xl {
+			font-size: 192px;
+			line-height: 198px;
+		}
+	}
+
+	@media (min-width: 3840px) {
+		.text-xs {
+			font-size: 36px;
+			line-height: 42px;
+		}
+
+		.text-sm {
+			font-size: 42px;
+			line-height: 50px;
+		}
+
+		.text-md {
+			font-size: 48px;
+			line-height: 58px;
+		}
+
+		.text-xl {
+			font-size: 60px;
+			line-height: 70px;
+		}
+
+		.text-2xl {
+			font-size: 72px;
+			line-height: 82px;
+		}
+
+		.text-4xl {
+			font-size: 108px;
+			line-height: 114px;
+		}
+
+		.text-6xl {
+			font-size: 180px;
+			line-height: 188px;
+		}
+
+		.text-8xl {
+			font-size: 288px;
+			line-height: 300px;
+		}
+	}
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 button.icon span {

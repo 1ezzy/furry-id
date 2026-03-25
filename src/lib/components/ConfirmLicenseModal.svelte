@@ -8,7 +8,7 @@
 <Dialog bind:open class="max-h-[90vh] max-w-[90vw]">
 	<div class="text-primary mb-2 text-6xl" slot="title">Confirm License Details</div>
 	<ConfirmLicenseModalBody />
-	<div slot="actions" class="flex w-full items-center gap-2 px-2">
+	<div slot="actions" class="flex w-full items-center gap-2 px-4 py-2">
 		<div class="flex-1">
 			{#if !isFormValid}
 				<span class="text-danger text-xl font-bold">You have incomplete fields!</span>

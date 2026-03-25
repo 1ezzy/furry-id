@@ -32,7 +32,7 @@
 		ontouchmove={preventScroll}
 		ontouchend={preventScroll}
 	>
-		{#each licenseStore.signature as layer}
+		{#each licenseStore.signature as layer (layer.path)}
 			<svg
 				class="pointer-events-none absolute h-full w-full fill-black"
 				viewBox="0 0 {layer.width} {layer.height}"

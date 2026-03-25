@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Popover } from 'svelte-ux';
 
-	let { wrapper = $bindable(), isOpen, isDialog, children } = $props();
+	let { wrapper = $bindable(), isOpen, children } = $props();
 
 	const preventScroll = (e: TouchEvent) => {
 		e.preventDefault();
