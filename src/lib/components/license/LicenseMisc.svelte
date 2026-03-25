@@ -5,11 +5,11 @@
 	import { formatDateForLicense } from '$lib/utils/format-date-for-license';
 
 	let flagSrc = $derived<string>(
-		licenseStore.country.value ? `https://flagcdn.com/${licenseStore.country.value}.svg` : ''
+		licenseStore.country.value ? `https://flagcdn.com/w80/${licenseStore.country.value}.png` : ''
 	);
 
 	const licenseTitleClass = "font-['Roboto_Condensed'] text-[3.2cqw] font-bold text-black italic";
-	const countryFlagClass = 'h-full w-[9.5cqw]';
+	const countryFlagClass = 'h-[6.5cqw] w-[9.5cqw] object-cover';
 	const pawPrintClass = 'h-[8.8cqw] w-[8.8cqw] fill-black stroke-1';
 	const secondaryLabelsClass = 'font-[Roboto] text-[2.3cqw] font-bold text-black';
 </script>
@@ -20,7 +20,7 @@
 </div>
 
 <!-- Country Flag in Place of State Name -->
-<div class="absolute top-[5%] left-[4%] flex h-fit items-center justify-center">
+<div class="absolute top-[5%] left-[4%] flex h-[6.5cqw] items-center justify-center">
 	{#if licenseStore.country.value}
 		<img
 			class={countryFlagClass}

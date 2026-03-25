@@ -31,7 +31,7 @@
 <div class="absolute top-[-9999px] left-[-9999px] h-[1350px] w-[2140px]">
 	<div
 		id="license-overlay-export"
-		class="@container relative flex aspect-856/540 h-full w-full rounded-[64px] border-2 border-black bg-contain tracking-wide dark:border-white"
+		class="@container relative flex aspect-856/540 h-full w-full rounded-[64px] bg-contain tracking-wide"
 		style={computedStyle}
 	>
 		<LicenseLabels />
