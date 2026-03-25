@@ -7,11 +7,11 @@
 	import PageShell from '$lib/components/PageShell.svelte';
 	import { ArrowLeft } from '@lucide/svelte';
 
-	// onMount(() => {
-	// 	if (!licenseStore.generatedLicenseImage) {
-	// 		goto(resolve('/'));
-	// 	}
-	// });
+	onMount(() => {
+		if (!licenseStore.generatedLicenseImage) {
+			goto(resolve('/'));
+		}
+	});
 
 	const downloadImage = (): void => {
 		if (!licenseStore.generatedLicenseImage) return;
