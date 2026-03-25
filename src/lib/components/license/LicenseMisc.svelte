@@ -9,7 +9,7 @@
 	);
 
 	const licenseTitleClass = "font-['Roboto_Condensed'] text-[3.2cqw] font-bold text-black italic";
-	const countryFlagClass = 'h-full w-[9.5cqw] rounded-md';
+	const countryFlagClass = 'h-full w-[9.5cqw]';
 	const pawPrintClass = 'h-[8.8cqw] w-[8.8cqw] fill-black stroke-1';
 	const secondaryLabelsClass = 'font-[Roboto] text-[2.3cqw] font-bold text-black';
 </script>
@@ -22,7 +22,12 @@
 <!-- Country Flag in Place of State Name -->
 <div class="absolute top-[5%] left-[4%] flex h-fit items-center justify-center">
 	{#if licenseStore.country.value}
-		<img class={countryFlagClass} src={flagSrc} alt={licenseStore.country.label} />
+		<img
+			class={countryFlagClass}
+			style="border-radius: 1cqw"
+			src={flagSrc}
+			alt={licenseStore.country.label}
+		/>
 	{/if}
 </div>
 
@@ -33,13 +38,15 @@
 
 <!-- Main Photo -->
 <div
-	class="absolute top-[25%] left-[4%] flex h-[54%] w-[26%] items-center justify-center rounded-md bg-gray-100 md:rounded-2xl"
+	class="absolute top-[25%] left-[4%] flex h-[54%] w-[26%] items-center justify-center bg-gray-100"
+	style="border-radius: 2cqw"
 >
 	{#if licenseStore.mainPhoto}
 		<img
 			src={licenseStore.mainPhoto}
 			alt="Main Headshot"
-			class="h-full w-full rounded-2xl object-scale-down"
+			class="h-full w-full object-scale-down"
+			style="border-radius: 2cqw"
 		/>
 	{/if}
 </div>
@@ -58,7 +65,8 @@
 
 <!-- Secondary Photo With License #, Signature, and Birthday -->
 <div
-	class="absolute top-[72%] left-[65.5%] h-[15%] w-[25%] rounded-sm bg-gray-100 md:rounded-lg"
+	class="absolute top-[72%] left-[65.5%] h-[15%] w-[25%] bg-gray-100"
+	style="border-radius: 2cqw"
 ></div>
 <div class="absolute top-[72%] left-[67%] flex h-fit items-center">
 	<span class={secondaryLabelsClass} class:opacity-60={licenseStore.licenseNumber.length === 0}>
@@ -75,7 +83,7 @@
 		</svg>
 	{/each}
 </div>
-<div class="absolute top-[82%] left-[67%] flex h-fit items-center">
+<div class="absolute top-[81.5%] left-[67%] flex h-fit items-center">
 	<span class={secondaryLabelsClass} class:opacity-60={licenseStore.birthday === null}>
 		{licenseStore.birthday !== null ? formatDateForLicense(licenseStore.birthday) : '01/01/2000'}
 	</span>
